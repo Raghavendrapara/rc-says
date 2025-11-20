@@ -87,6 +87,7 @@ body[data-theme="dark"] {
     align-items: flex-start;
     justify-content: center;
     padding: 20px 16px 40px;
+    width: 100%;
 }
 
 .container {
@@ -116,6 +117,8 @@ header {
     padding: 40px 32px;
     position: relative;
     overflow: hidden;
+    will-change: auto;
+    transform: translateZ(0);
 }
 
 /* Animated background pattern */
@@ -133,10 +136,10 @@ header::before {
 
 @keyframes gradientShift {
     0%, 100% {
-        opacity: 1;
+        opacity: 0.9;
     }
     50% {
-        opacity: 0.8;
+        opacity: 0.85;
     }
 }
 
@@ -768,6 +771,7 @@ footer {
     .layout {
         grid-template-columns: 1fr;
         gap: 20px;
+        padding: 24px 16px;
     }
 
     .layout-side {
@@ -777,15 +781,26 @@ footer {
     .header-main {
         flex-direction: column;
         align-items: flex-start;
+        gap: 14px;
     }
 
     .header-actions {
         align-self: stretch;
         justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .btn-primary {
         align-self: flex-start;
+    }
+
+    header {
+        padding: 32px 20px;
+    }
+
+    .header-main > div:first-child h1 {
+        font-size: 2.2rem;
     }
 }
 
@@ -799,11 +814,23 @@ footer {
         box-shadow: none;
         border-left: none;
         border-right: none;
-        padding: 18px 16px 20px;
+        padding: 0;
     }
 
-    h1 {
+    header {
+        padding: 28px 16px;
+        border-radius: 0;
+    }
+
+    .header-main {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+
+    .header-main > div:first-child h1 {
         font-size: 1.8rem;
+        margin-bottom: 8px;
     }
 
     .tagline {
@@ -812,5 +839,11 @@ footer {
 
     .contact-links {
         font-size: 0.85rem;
+        gap: 10px;
+    }
+
+    .layout {
+        padding: 16px;
+        gap: 16px;
     }
 }
