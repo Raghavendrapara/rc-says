@@ -1,35 +1,25 @@
 # Raghavendra Singh Chauhan - Personal Portfolio
 
-This repository contains the source code for my personal portfolio website. It is built with simple, clean HTML and CSS and is hosted for free using **GitHub Pages**.
+This repository contains the source code for my personal portfolio website showcasing my professional experience as a Software Engineer. Built with clean, semantic HTML and custom CSS, hosted on GitHub Pages.
 
-This site serves as a live, web-based version of my professional resume, detailing my experience as a Software Engineer.
-
-## 🚀 Live Site
-
-The website is live and can be viewed at:
+## 🌐 Live Site
 
 **[https://Raghavendrapara.github.io/rc-says](https://Raghavendrapara.github.io/rc-says)**
 
 ## 🛠️ Tech Stack
 
-This is a intentionally simple project to demonstrate a clean, fast-loading "from-scratch" build.
+* **HTML5:** Semantic structure and content
+* **CSS3:** Custom styling, Grid layout, responsive design
+* **GitHub Pages:** Free hosting
 
-* **HTML5:** For the semantic structure and content.
-* **CSS3:** For all custom styling, layout (using Grid), and responsiveness.
-* **GitHub Pages:** For hosting.
+## 📖 Local Setup
 
-## 💻 How to View Locally
+```bash
+git clone https://github.com/Raghavendrapara/rc-says.git
+cd rc-says
+open index.html  # or use your browser to open the file
+```
 
-1.  Clone this repository:
-    ```bash
-    git clone [https://github.com/Raghavendrapara/rc-says.git](https://github.com/Raghavendrapara/rc-says.git)
-    ```
-2.  Navigate to the project directory:
-    ```bash
-    cd rc-says
-    ```
-3.  Open the `index.html` file directly in your web browser.
+## 📜 License
 
-## 📄 License
-
-The code in this repository is open for public use. Feel free to inspect the code or use it as a template. However, the personal content, project descriptions, and resume details are my own and are not intended for reuse.
+Code is open for public use. Personal content and resume details are proprietary.
