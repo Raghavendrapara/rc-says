@@ -319,12 +319,21 @@
 
             updateToggleLabel();
 
-            toggle.addEventListener('click', function() {
+            // central toggle handler (debounced) to support both click and pointer events on mobile
+            let _lastToggle = 0;
+            function handleToggleEvent(e) {
+                const now = Date.now();
+                if (now - _lastToggle < 300) return; // debounce to avoid double-fire
+                _lastToggle = now;
                 const next = body.dataset.theme === 'dark' ? 'light' : 'dark';
                 body.dataset.theme = next;
                 window.localStorage.setItem('theme', next);
                 updateToggleLabel();
-            });
+            }
+
+            // Support pointer events (immediate on touch devices) and click as fallback
+            toggle.addEventListener('pointerup', handleToggleEvent);
+            toggle.addEventListener('click', handleToggleEvent);
         })();
     </script>
 </body>

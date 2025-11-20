@@ -339,7 +339,7 @@ h1 {
     letter-spacing: 0.03em;
 }
 
-.tagline {
+.layout .tagline {
     margin: 4px 0 0;
     font-size: 0.98rem;
     color: var(--text-muted);
