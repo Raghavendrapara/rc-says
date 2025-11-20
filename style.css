@@ -457,13 +457,7 @@ section p {
     line-height: 1.7;
 }
 
-/* ============================
-   SUMMARY
-   ============================ */
-#summary p {
-    max-width: 680px;
-    color: var(--text-muted);
-}
+
 
 /* ============================
    TIMELINE (EXPERIENCE)
