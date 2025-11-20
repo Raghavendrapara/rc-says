@@ -1,0 +1,542 @@
+/* ============================
+   THEME TOKENS (LIGHT DEFAULT)
+   ============================ */
+:root {
+    --bg-page: #f3f6fb;
+    --bg-card: #ffffff;
+    --bg-soft: #f9fafb;
+
+    --text-main: #111827;
+    --text-muted: #6b7280;
+
+    --accent: #2563eb;
+    --accent-soft: rgba(37, 99, 235, 0.08);
+
+    --border-soft: #e5e7eb;
+
+    --radius-lg: 16px;
+    --radius-md: 10px;
+    --radius-sm: 6px;
+
+    --shadow-card: 0 18px 45px rgba(15, 23, 42, 0.10);
+}
+
+/* ============================
+   DARK THEME OVERRIDES
+   ============================ */
+body[data-theme="dark"] {
+    --bg-page: #020617;
+    --bg-card: #020617;
+    --bg-soft: #020617;
+
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+
+    --accent: #60a5fa;
+    --accent-soft: rgba(56, 189, 248, 0.14);
+
+    --border-soft: #1f2933;
+
+    --shadow-card: 0 24px 50px rgba(0, 0, 0, 0.9);
+}
+
+/* ============================
+   GLOBAL RESET
+   ============================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-main);
+    background: radial-gradient(circle at top, #e0ebff 0, #f3f6fb 45%, #f3f6fb 100%);
+}
+
+/* Dark mode background gradient */
+body[data-theme="dark"] {
+    background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #020617 100%);
+}
+
+/* ============================
+   PAGE SHELL & CONTAINER
+   ============================ */
+.page-shell {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px 16px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1080px;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    padding: 28px 32px 32px;
+}
+
+/* In dark mode, make border more subtle */
+body[data-theme="dark"] .container {
+    border-color: #111827;
+}
+
+/* ============================
+   HEADER
+   ============================ */
+header {
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+}
+
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 0.03em;
+}
+
+.tagline {
+    margin: 4px 0 0;
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    max-width: 620px;
+}
+
+/* ============================
+   BUTTONS
+   ============================ */
+.btn-primary {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background-color: var(--accent);
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.45);
+    transition: transform 0.1s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 16px 32px rgba(37, 99, 235, 0.5);
+}
+
+body[data-theme="dark"] .btn-primary {
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.9);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 7px 11px;
+    border-radius: 999px;
+    border: 1px solid var(--border-soft);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--accent-soft);
+    color: var(--accent);
+    border-color: rgba(129, 140, 248, 0.6);
+    transform: translateY(-1px);
+}
+
+/* ============================
+   CONTACT ROW
+   ============================ */
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    align-items: center;
+}
+
+.contact-links a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
+
+.contact-links .divider {
+    color: #cbd5f5;
+}
+
+body[data-theme="dark"] .contact-links .divider {
+    color: #1f2937;
+}
+
+/* ============================
+   LAYOUT (TWO COLUMN)
+   ============================ */
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2.1fr) minmax(260px, 1.4fr);
+    gap: 28px;
+    margin-top: 10px;
+}
+
+.layout-main,
+.layout-side {
+    min-width: 0;
+}
+
+/* ============================
+   SECTIONS & HEADINGS
+   ============================ */
+section {
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin: 0 0 10px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+h2::before {
+    content: "";
+    width: 6px;
+    height: 18px;
+    border-radius: 999px;
+    background: var(--accent);
+}
+
+h3 {
+    margin: 0 0 4px;
+    font-size: 0.98rem;
+}
+
+/* Base text */
+section p {
+    margin: 0 0 6px;
+    font-size: 0.94rem;
+}
+
+/* ============================
+   SUMMARY
+   ============================ */
+#summary p {
+    max-width: 680px;
+}
+
+/* ============================
+   TIMELINE (EXPERIENCE)
+   ============================ */
+.timeline {
+    position: relative;
+    padding-left: 16px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 4px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom,
+        rgba(148, 163, 184, 0.7),
+        rgba(203, 213, 225, 0)
+    );
+}
+
+body[data-theme="dark"] .timeline::before {
+    background: linear-gradient(to bottom,
+        rgba(75, 85, 99, 0.9),
+        rgba(31, 41, 55, 0)
+    );
+}
+
+.job {
+    position: relative;
+    padding: 10px 10px 6px 18px;
+    margin-bottom: 14px;
+    border-radius: var(--radius-md);
+    background: var(--bg-soft);
+    border: 1px solid rgba(229, 231, 235, 0.9);
+}
+
+body[data-theme="dark"] .job {
+    background: #020617;
+    border-color: #111827;
+}
+
+.job::before {
+    content: "";
+    position: absolute;
+    left: -3px;
+    top: 14px;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background-color: #ffffff;
+    border: 2px solid var(--accent);
+}
+
+body[data-theme="dark"] .job::before {
+    background-color: #020617;
+}
+
+.job-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 6px;
+}
+
+.job-meta {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Job bullet list */
+.job ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.job li {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 10px;
+}
+
+.job li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #9ca3af;
+}
+
+body[data-theme="dark"] .job li::before {
+    color: #4b5563;
+}
+
+/* ============================
+   CARD LISTS (PROJECTS ETC.)
+   ============================ */
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-list > li {
+    margin-bottom: 8px;
+}
+
+.card {
+    background: var(--bg-soft);
+    border-radius: var(--radius-md);
+    padding: 9px 10px;
+    border: 1px solid rgba(229, 231, 235, 0.9);
+}
+
+body[data-theme="dark"] .card {
+    background: #020617;
+    border-color: #111827;
+}
+
+.card b {
+    display: block;
+    font-size: 0.92rem;
+    margin-bottom: 2px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* ============================
+   SKILLS AS CHIPS
+   ============================ */
+#skills h3 {
+    font-size: 0.86rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.chip {
+    font-size: 0.8rem;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid rgba(191, 219, 254, 0.9);
+    color: #1d4ed8;
+    white-space: nowrap;
+}
+
+body[data-theme="dark"] .chip {
+    border-color: #1d4ed8;
+    color: #bfdbfe;
+}
+
+/* ============================
+   STACKED LISTS (EDU / HIGHLIGHTS / INTERESTS)
+   ============================ */
+.stacked-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stacked-list li {
+    padding: 8px 10px;
+    border-radius: var(--radius-md);
+    background: var(--bg-soft);
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    margin-bottom: 8px;
+}
+
+body[data-theme="dark"] .stacked-list li {
+    background: #020617;
+    border-color: #111827;
+}
+
+.stacked-list b {
+    font-size: 0.9rem;
+}
+
+.stacked-list p {
+    font-size: 0.86rem;
+    margin: 2px 0;
+}
+
+.stacked-list .meta {
+    color: var(--text-muted);
+}
+
+/* ============================
+   LINKS (GENERAL)
+   ============================ */
+a {
+    color: var(--accent);
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+footer {
+    border-top: 1px solid var(--border-soft);
+    margin-top: 6px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .layout-side {
+        order: -1; /* show skills/education above projects on mobile */
+    }
+
+    .header-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-actions {
+        align-self: stretch;
+        justify-content: flex-start;
+    }
+
+    .btn-primary {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-shell {
+        padding: 0;
+    }
+
+    .container {
+        border-radius: 0;
+        box-shadow: none;
+        border-left: none;
+        border-right: none;
+        padding: 18px 16px 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .contact-links {
+        font-size: 0.85rem;
+    }
+}
