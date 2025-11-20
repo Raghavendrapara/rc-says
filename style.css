@@ -140,6 +140,7 @@ header::before {
                 radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
     animation: none;
     opacity: 1;
+    pointer-events: none; /* allow clicks through the pseudo element */
 }
 
 @keyframes gradientShift {
@@ -163,6 +164,12 @@ body[data-theme="dark"] header {
 }
 
 header .container-inner {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure header child elements are above the animated background */
+header > * {
     position: relative;
     z-index: 1;
 }
@@ -843,6 +850,24 @@ footer {
     header {
         padding: 28px 16px;
         border-radius: 0;
+    }
+
+    /* Reduce heavy effects on mobile to improve scroll performance */
+    .container {
+        backdrop-filter: none;
+    }
+
+    /* Disable hover/box-shadow heavy styles on mobile */
+    .card,
+    .job,
+    .btn-primary,
+    .card-link .card {
+        box-shadow: none !important;
+        transition: none !important;
+    }
+
+    .theme-toggle {
+        z-index: 3;
     }
 
     /* Disable animations on mobile to prevent flickering */
