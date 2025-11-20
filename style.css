@@ -121,6 +121,13 @@ header {
     transform: translateZ(0);
 }
 
+/* Ensure all text in header is white */
+header h1,
+header p,
+header .contact-links a {
+    color: white;
+}
+
 /* Animated background pattern */
 header::before {
     content: '';
@@ -181,7 +188,8 @@ header .container-inner {
 
 .tagline {
     font-size: 1.05rem;
-    opacity: 0.80;
+    opacity: 1;
+    color: rgba(255, 255, 255, 0.90);
     margin: 0;
     line-height: 1.5;
     animation: slideInUp 0.6s ease-out 0.1s both;
