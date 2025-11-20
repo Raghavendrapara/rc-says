@@ -128,7 +128,7 @@ header .contact-links a {
     color: white;
 }
 
-/* Animated background pattern */
+/* Animated background pattern - DISABLED on mobile to prevent flickering */
 header::before {
     content: '';
     position: absolute;
@@ -138,15 +138,23 @@ header::before {
     bottom: 0;
     background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
-    animation: gradientShift 8s ease-in-out infinite;
+    animation: none;
+    opacity: 1;
 }
 
 @keyframes gradientShift {
     0%, 100% {
-        opacity: 0.9;
+        opacity: 1;
     }
     50% {
-        opacity: 0.85;
+        opacity: 1;
+    }
+}
+
+/* Desktop only: enable subtle animation */
+@media (min-width: 768px) {
+    header::before {
+        animation: gradientShift 12s ease-in-out infinite;
     }
 }
 
@@ -189,10 +197,11 @@ header .container-inner {
 .tagline {
     font-size: 1.05rem;
     opacity: 1;
-    color: rgba(255, 255, 255, 0.90);
+    color: #ffffff;
     margin: 0;
     line-height: 1.5;
     animation: slideInUp 0.6s ease-out 0.1s both;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes slideInUp {
@@ -258,12 +267,18 @@ header .container-inner {
 }
 
 .contact-links a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
     transition: all 0.3s ease;
     position: relative;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.divider {
+    opacity: 1;
+    color: #ffffff;
 }
 
 .contact-links a::after {
@@ -830,24 +845,29 @@ footer {
         border-radius: 0;
     }
 
-    .header-main {
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 14px;
+    /* Disable animations on mobile to prevent flickering */
+    .header-main > div:first-child h1,
+    .tagline,
+    .header-actions,
+    .contact-links {
+        animation: none !important;
     }
 
     .header-main > div:first-child h1 {
         font-size: 1.8rem;
         margin-bottom: 8px;
+        opacity: 1;
     }
 
     .tagline {
         font-size: 0.9rem;
+        opacity: 1;
     }
 
     .contact-links {
         font-size: 0.85rem;
         gap: 10px;
+        opacity: 1;
     }
 
     .layout {
