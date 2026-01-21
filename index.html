@@ -11,13 +11,18 @@
 </head>
 
 <body data-theme="light">
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <div class="page-shell">
         <div class="container">
             <header>
                 <div class="header-main">
                     <div>
-                        <h1>Raghavendra Singh Chauhan</h1>
+                        <h1 class="typing-effect" id="heroName">Raghavendra Singh Chauhan</h1>
                         <p class="tagline">
                             Software Engineer with 3 years owning critical microservices and infrastructure at Deutsche
                             Bank. Enjoy diving deep into internals, building scalable systems, debugging, and mentoring.
@@ -25,11 +30,15 @@
                     </div>
 
                     <div class="header-actions">
-                        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
-                            Dark
+                        <button class="theme-toggle magnetic-btn" id="themeToggle" type="button"
+                            aria-label="Toggle dark mode">
+                            <span class="btn-text">Dark</span>
+                            <span class="btn-glow"></span>
                         </button>
-                        <a class="btn-primary" href="/rc-says/raghavendraCV_2025.pdf" target="_blank" rel="noopener">
-                            Download Resume
+                        <a class="btn-primary magnetic-btn" href="/rc-says/raghavendraCV_2025.pdf" target="_blank"
+                            rel="noopener">
+                            <span class="btn-text">Download Resume</span>
+                            <span class="btn-glow"></span>
                         </a>
                     </div>
                 </div>
@@ -50,11 +59,11 @@
                 <!-- LEFT COLUMN -->
                 <div class="layout-main">
 
-                    <section id="experience">
+                    <section id="experience" class="reveal-section">
                         <h2>Professional Experience</h2>
 
                         <div class="timeline">
-                            <div class="job">
+                            <div class="job tilt-card">
                                 <div class="job-header">
                                     <h3>Career Break</h3>
                                     <span class="job-meta">Indian Civil Services Examination (Mathematics Optional) ·
@@ -68,7 +77,7 @@
                                 </ul>
                             </div>
 
-                            <div class="job">
+                            <div class="job tilt-card">
                                 <div class="job-header">
                                     <h3>Software Engineer (Associate)</h3>
                                     <span class="job-meta">Deutsche Bank · Pune, India · September 2023 – December
@@ -88,7 +97,7 @@
                                 </ul>
                             </div>
 
-                            <div class="job">
+                            <div class="job tilt-card">
                                 <div class="job-header">
                                     <h3>Software Engineer (Analyst)</h3>
                                     <span class="job-meta">Deutsche Bank · Pune, India · July 2021 – September
@@ -106,8 +115,9 @@
                                     </li>
                                     <li>
                                         Drove Hazelcast 4.x & Camel 3.x upgrade across tightly-coupled modular
-                                        monolith—<strong>deep-dived documentation, debugged config migrations</strong>,
-                                        retuned parameters, <strong>averting 8-week compliance delay</strong>
+                                        monolith—<strong>deep-dived documentation, debugged config
+                                            migrations</strong>, retuned parameters, <strong>averting 8-week compliance
+                                            delay</strong>
                                     </li>
                                     <li>
                                         Strengthened engineering practices across team—automated repetitive workflows,
@@ -125,7 +135,7 @@
                                 </ul>
                             </div>
 
-                            <div class="job">
+                            <div class="job tilt-card">
                                 <div class="job-header">
                                     <h3>Google Summer of Code 2020 Student Developer</h3>
                                     <span class="job-meta">INCF Belgian Node · Remote · May 2020 – September 2020</span>
@@ -144,13 +154,13 @@
                         </div>
                     </section>
 
-                    <section id="projects">
+                    <section id="projects" class="reveal-section">
                         <h2>Projects</h2>
                         <ul class="card-list">
                             <li>
                                 <a href="https://github.com/Raghavendrapara/social-distro" target="_blank"
                                     rel="noopener" class="card-link">
-                                    <div class="card">
+                                    <div class="card tilt-card">
                                         <b>AI-Powered Knowledge Hub | Java 25, Spring Boot, Kafka, pgvector</b>
                                         <ul class="card-bullets">
                                             <li>Distributed indexing with <strong>Virtual Threads</strong> +
@@ -164,7 +174,7 @@
                             <li>
                                 <a href="https://github.com/Raghavendrapara/diffu-syn" target="_blank" rel="noopener"
                                     class="card-link">
-                                    <div class="card">
+                                    <div class="card tilt-card">
                                         <b>Diffu-Syn: Synthetic Data Generator | PyTorch, FastAPI, Celery, Redis</b>
                                         <ul class="card-bullets">
                                             <li>Event-driven training platform with async job orchestration + auto retry
@@ -178,7 +188,7 @@
                             <li>
                                 <a href="https://github.com/Raghavendrapara/cpp-AuthServer" target="_blank"
                                     rel="noopener" class="card-link">
-                                    <div class="card">
+                                    <div class="card tilt-card">
                                         <b>Distributed Auth System | C++, gRPC, ECDSA</b>
                                         <ul class="card-bullets">
                                             <li>High-frequency distributed authentication using <strong>gRPC</strong>
@@ -191,7 +201,7 @@
                             <li>
                                 <a href="https://github.com/Raghavendrapara/quant-mill" target="_blank" rel="noopener"
                                     class="card-link">
-                                    <div class="card">
+                                    <div class="card tilt-card">
                                         <b>Quant Trading Backtesting Engine | Python</b>
                                         <ul class="card-bullets">
                                             <li>Quantitative-finance based trading logic</li>
@@ -203,7 +213,7 @@
                             <li>
                                 <a href="https://github.com/OpenBB-finance/OpenBB/pulls?q=is%3Apr+is%3Aclosed+author%3ARaghavendrapara"
                                     target="_blank" rel="noopener" class="card-link">
-                                    <div class="card">
+                                    <div class="card tilt-card">
                                         <b>OpenBB Terminal (OSS) | Python, 37k+ stars</b>
                                         <ul class="card-bullets">
                                             <li>Merged 2 PRs fixing data integrity issues</li>
@@ -215,7 +225,7 @@
                             <li>
                                 <a href="https://colab.research.google.com/drive/1AcMwmFJhq6rz4bAQGOa7QqleseyUfRqu?usp=sharing"
                                     target="_blank" rel="noopener" class="card-link">
-                                    <div class="card">
+                                    <div class="card tilt-card">
                                         <b>MI Detection | Deep Learning, Python</b>
                                         <ul class="card-bullets">
                                             <li><strong>LSTM</strong> binary classifier trained on PTB ECG data</li>
@@ -230,64 +240,64 @@
 
                 <!-- RIGHT COLUMN -->
                 <aside class="layout-side">
-                    <section id="skills">
+                    <section id="skills" class="reveal-section">
                         <h2>Software Engineering Skills</h2>
                         <div class="skills-chips-group">
                             <h3>Languages & Frameworks</h3>
                             <div class="chips">
-                                <span class="chip">Java</span>
-                                <span class="chip">Spring</span>
-                                <span class="chip">Spring Boot</span>
-                                <span class="chip">Python</span>
-                                <span class="chip">SQL</span>
+                                <span class="chip pulse-chip">Java</span>
+                                <span class="chip pulse-chip">Spring</span>
+                                <span class="chip pulse-chip">Spring Boot</span>
+                                <span class="chip pulse-chip">Python</span>
+                                <span class="chip pulse-chip">SQL</span>
                             </div>
 
                             <h3>Infrastructure</h3>
                             <div class="chips">
-                                <span class="chip">Hazelcast</span>
-                                <span class="chip">Spark</span>
-                                <span class="chip">Kafka</span>
-                                <span class="chip">Redis</span>
-                                <span class="chip">Elasticsearch</span>
-                                <span class="chip">GCP</span>
-                                <span class="chip">AWS</span>
-                                <span class="chip">Docker</span>
+                                <span class="chip pulse-chip">Hazelcast</span>
+                                <span class="chip pulse-chip">Spark</span>
+                                <span class="chip pulse-chip">Kafka</span>
+                                <span class="chip pulse-chip">Redis</span>
+                                <span class="chip pulse-chip">Elasticsearch</span>
+                                <span class="chip pulse-chip">GCP</span>
+                                <span class="chip pulse-chip">AWS</span>
+                                <span class="chip pulse-chip">Docker</span>
                             </div>
 
                             <h3>Concepts</h3>
                             <div class="chips">
-                                <span class="chip">Distributed Systems</span>
-                                <span class="chip">Concurrency</span>
-                                <span class="chip">System Design</span>
-                                <span class="chip">OOP</span>
+                                <span class="chip pulse-chip">Distributed Systems</span>
+                                <span class="chip pulse-chip">Concurrency</span>
+                                <span class="chip pulse-chip">System Design</span>
+                                <span class="chip pulse-chip">OOP</span>
                             </div>
 
                             <h3>Others</h3>
                             <div class="chips">
-                                <span class="chip">REST</span>
-                                <span class="chip">gRPC</span>
-                                <span class="chip">Terraform</span>
-                                <span class="chip">SonarQube</span>
-                                <span class="chip">JUnit</span>
-                                <span class="chip">Mockito</span>
+                                <span class="chip pulse-chip">REST</span>
+                                <span class="chip pulse-chip">gRPC</span>
+                                <span class="chip pulse-chip">Terraform</span>
+                                <span class="chip pulse-chip">SonarQube</span>
+                                <span class="chip pulse-chip">JUnit</span>
+                                <span class="chip pulse-chip">Mockito</span>
                             </div>
 
                             <h3>AI/ML</h3>
                             <div class="chips">
-                                <span class="chip">LLM Integration</span>
-                                <span class="chip">RAG</span>
-                                <span class="chip">pgvector</span>
-                                <span class="chip">HNSW</span>
-                                <span class="chip">PyTorch</span>
-                                <span class="chip">Diffusion Models</span>
+                                <span class="chip pulse-chip">LLM Integration</span>
+                                <span class="chip pulse-chip">RAG</span>
+                                <span class="chip pulse-chip">pgvector</span>
+                                <span class="chip pulse-chip">HNSW</span>
+                                <span class="chip pulse-chip">PyTorch</span>
+                                <span class="chip pulse-chip">Diffusion Models</span>
                             </div>
                         </div>
                     </section>
 
-                    <section id="education">
+                    <section id="education" class="reveal-section">
                         <h2>Academics</h2>
                         <ul class="stacked-list">
-                            <li>
+                            <li class="tilt-card">
                                 <b>Indian Institute of Engineering Science & Technology Shibpur</b>
                                 <p>B.Tech in Electronics & Telecommunications; CGPA: 9.15/10</p>
                                 <p class="meta">WB, India · July 2017 – June 2021</p>
@@ -297,23 +307,23 @@
                         </ul>
                     </section>
 
-                    <section id="accomplishments">
+                    <section id="accomplishments" class="reveal-section">
                         <h2>Achievements</h2>
                         <ul class="stacked-list">
-                            <li>
+                            <li class="tilt-card">
                                 <b>Certifications</b>
                                 <p class="meta">
                                     MarcoBehler(JetBrains) Spring Professional, deeplearning.ai RAG, Educative AWS
                                     Bedrock
                                 </p>
                             </li>
-                            <li>
+                            <li class="tilt-card">
                                 <b>Deutsche Bank Recognition Award 2022</b>
                                 <p class="meta">
                                     Cash reward for delivering critical modules and demonstrating ownership.
                                 </p>
                             </li>
-                            <li>
+                            <li class="tilt-card">
                                 <b>Indian Army Officer Selection (Engineers - 2017)</b>
                                 <p class="meta">
                                     Cleared SSB 5-day evaluation of IQ, EQ, personality, and leadership traits.
@@ -331,6 +341,207 @@
     </div>
 
     <script>
+        // =============================================
+        // PARTICLE CONSTELLATION BACKGROUND
+        // =============================================
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null, radius: 150 };
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.baseX = this.x;
+                this.baseY = this.y;
+                this.density = Math.random() * 30 + 1;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+            }
+
+            update() {
+                // Mouse interaction
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let maxDistance = mouse.radius;
+                let force = (maxDistance - distance) / maxDistance;
+                let directionX = forceDirectionX * force * this.density;
+                let directionY = forceDirectionY * force * this.density;
+
+                if (distance < mouse.radius) {
+                    this.x -= directionX;
+                    this.y -= directionY;
+                } else {
+                    // Gentle floating movement
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    // Wrap around screen
+                    if (this.x < 0) this.x = canvas.width;
+                    if (this.x > canvas.width) this.x = 0;
+                    if (this.y < 0) this.y = canvas.height;
+                    if (this.y > canvas.height) this.y = 0;
+                }
+            }
+
+            draw() {
+                const isDark = document.body.dataset.theme === 'dark';
+                ctx.fillStyle = isDark ? 'rgba(129, 140, 248, 0.6)' : 'rgba(99, 102, 241, 0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const numberOfParticles = Math.min((canvas.width * canvas.height) / 12000, 120);
+            for (let i = 0; i < numberOfParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function connectParticles() {
+            const isDark = document.body.dataset.theme === 'dark';
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let dx = particles[a].x - particles[b].x;
+                    let dy = particles[a].y - particles[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 120) {
+                        let opacity = 1 - distance / 120;
+                        ctx.strokeStyle = isDark
+                            ? `rgba(129, 140, 248, ${opacity * 0.3})`
+                            : `rgba(99, 102, 241, ${opacity * 0.2})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            connectParticles();
+            requestAnimationFrame(animateParticles);
+        }
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+
+        window.addEventListener('mouseout', () => {
+            mouse.x = undefined;
+            mouse.y = undefined;
+        });
+
+        initParticles();
+        animateParticles();
+
+        // =============================================
+        // CURSOR GLOW EFFECT
+        // =============================================
+        const cursorGlow = document.getElementById('cursorGlow');
+        let cursorX = 0, cursorY = 0;
+        let glowX = 0, glowY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            cursorX = e.clientX;
+            cursorY = e.clientY;
+        });
+
+        function animateCursorGlow() {
+            glowX += (cursorX - glowX) * 0.1;
+            glowY += (cursorY - glowY) * 0.1;
+            cursorGlow.style.left = glowX + 'px';
+            cursorGlow.style.top = glowY + 'px';
+            requestAnimationFrame(animateCursorGlow);
+        }
+        animateCursorGlow();
+
+        // =============================================
+        // 3D TILT EFFECT ON CARDS
+        // =============================================
+        const tiltCards = document.querySelectorAll('.tilt-card');
+
+        tiltCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
+        });
+
+        // =============================================
+        // SCROLL REVEAL ANIMATION
+        // =============================================
+        const revealSections = document.querySelectorAll('.reveal-section');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealSections.forEach(section => {
+            revealObserver.observe(section);
+        });
+
+        // =============================================
+        // MAGNETIC BUTTON EFFECT
+        // =============================================
+        const magneticBtns = document.querySelectorAll('.magnetic-btn');
+
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        // =============================================
+        // THEME TOGGLE
+        // =============================================
         (function () {
             const body = document.body;
             const toggle = document.getElementById('themeToggle');
@@ -342,7 +553,7 @@
 
             function updateToggleLabel() {
                 const isDark = body.dataset.theme === 'dark';
-                toggle.textContent = isDark ? 'Light' : 'Dark';
+                toggle.querySelector('.btn-text').textContent = isDark ? 'Light' : 'Dark';
                 toggle.setAttribute(
                     'aria-label',
                     isDark ? 'Switch to light mode' : 'Switch to dark mode'
@@ -351,22 +562,31 @@
 
             updateToggleLabel();
 
-            // central toggle handler (debounced) to support both click and pointer events on mobile
             let _lastToggle = 0;
             function handleToggleEvent(e) {
                 const now = Date.now();
-                if (now - _lastToggle < 300) return; // debounce to avoid double-fire
+                if (now - _lastToggle < 300) return;
                 _lastToggle = now;
                 const next = body.dataset.theme === 'dark' ? 'light' : 'dark';
                 body.dataset.theme = next;
                 window.localStorage.setItem('theme', next);
                 updateToggleLabel();
+
+                // Reinitialize particles for new theme colors
+                initParticles();
             }
 
-            // Support pointer events (immediate on touch devices) and click as fallback
             toggle.addEventListener('pointerup', handleToggleEvent);
             toggle.addEventListener('click', handleToggleEvent);
         })();
+
+        // =============================================
+        // STAGGERED CHIP ANIMATION
+        // =============================================
+        const chips = document.querySelectorAll('.pulse-chip');
+        chips.forEach((chip, index) => {
+            chip.style.animationDelay = `${index * 0.05}s`;
+        });
     </script>
 </body>
 
