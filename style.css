@@ -1030,41 +1030,54 @@ footer {
         border-right: none;
         animation: none;
         opacity: 1;
+        /* CRITICAL: Disable backdrop blur - causes flickering */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: var(--bg-card);
     }
 
+    /* CRITICAL: Disable header gradient animation */
     header {
         padding: 32px 20px;
         border-radius: 0;
+        animation: none !important;
+        background-size: 100% 100% !important;
     }
 
-    .container {
-        backdrop-filter: blur(10px);
+    /* CRITICAL: Disable header pseudo-element animations */
+    header::before,
+    header::after {
+        animation: none !important;
+        display: none !important;
     }
 
     #particleCanvas {
-        display: none;
+        display: none !important;
     }
 
     .cursor-glow {
-        display: none;
+        display: none !important;
     }
 
     .header-main>div:first-child h1 {
         font-size: 2rem;
-        animation: none;
+        animation: none !important;
         opacity: 1;
         filter: none;
+        text-shadow: none;
     }
 
     .tagline,
     .header-actions,
     .contact-links {
-        animation: none;
+        animation: none !important;
         opacity: 1;
+        filter: none;
     }
 
     .tagline {
         font-size: 0.95rem;
+        text-shadow: none;
     }
 
     .contact-links {
@@ -1081,22 +1094,58 @@ footer {
         margin: 0 18px;
     }
 
-    /* Disable 3D effects on mobile */
+    /* Disable ALL tilt/transform effects */
     .tilt-card {
         transform: none !important;
+        transition: none !important;
     }
 
     .reveal-section {
         opacity: 1;
         transform: none;
+        transition: none !important;
     }
 
     .reveal-section .job,
     .reveal-section .card,
+    .reveal-section .card-list>li,
     .reveal-section .stacked-list li,
     .reveal-section .chip {
-        animation: none;
+        animation: none !important;
         opacity: 1;
+    }
+
+    /* Disable pulse animation */
+    .pulse-chip {
+        animation: none !important;
+    }
+
+    /* Disable card gradient bar */
+    .card::before {
+        display: none !important;
+    }
+
+    /* Disable job dot glow */
+    .job::before {
+        box-shadow: none;
+        animation: none !important;
+    }
+
+    /* Disable magnetic buttons */
+    .magnetic-btn {
+        transform: none !important;
+    }
+
+    .btn-glow {
+        display: none !important;
+    }
+
+    /* Disable button effects */
+    .theme-toggle,
+    .btn-primary {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        transition: none !important;
     }
 }
 
