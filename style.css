@@ -1019,8 +1019,24 @@ footer {
 }
 
 @media (max-width: 600px) {
+
+    /* Force proper mobile viewport behavior */
+    html {
+        font-size: 15px;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        min-width: 0;
+    }
+
     .page-shell {
         padding: 0;
+        width: 100%;
+        min-width: 0;
     }
 
     .container {
@@ -1030,6 +1046,9 @@ footer {
         border-right: none;
         animation: none;
         opacity: 1;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         /* CRITICAL: Disable backdrop blur - causes flickering */
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
@@ -1038,7 +1057,7 @@ footer {
 
     /* CRITICAL: Disable header gradient animation */
     header {
-        padding: 32px 20px;
+        padding: 24px 16px;
         border-radius: 0;
         animation: none !important;
         background-size: 100% 100% !important;
@@ -1059,39 +1078,208 @@ footer {
         display: none !important;
     }
 
+    /* Fix header layout for mobile */
+    .header-main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
     .header-main>div:first-child h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+        line-height: 1.2;
         animation: none !important;
         opacity: 1;
         filter: none;
         text-shadow: none;
-    }
-
-    .tagline,
-    .header-actions,
-    .contact-links {
-        animation: none !important;
-        opacity: 1;
-        filter: none;
+        word-break: break-word;
+        hyphens: auto;
     }
 
     .tagline {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
         text-shadow: none;
+        opacity: 1;
+        animation: none !important;
+        filter: none;
     }
 
+    /* Stack header buttons vertically */
+    .header-actions {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        animation: none !important;
+        opacity: 1;
+        filter: none;
+    }
+
+    .theme-toggle,
+    .btn-primary {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.92rem;
+        /* Touch-friendly minimum height */
+        min-height: 48px;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        transition: none !important;
+    }
+
+    /* Fix contact links wrapping */
     .contact-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
         font-size: 0.85rem;
-        gap: 8px 14px;
+        animation: none !important;
+        opacity: 1;
+        filter: none;
     }
 
+    .contact-links .divider {
+        display: none;
+    }
+
+    .contact-links a,
+    .contact-links .phone {
+        padding: 4px 0;
+        display: block;
+        text-align: center;
+    }
+
+    /* Main layout fixes */
     .layout {
-        padding: 24px 18px;
-        gap: 24px;
+        padding: 20px 14px;
+        gap: 20px;
+        grid-template-columns: 1fr;
     }
 
+    .layout-main,
+    .layout-side {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    /* Section spacing */
+    section {
+        margin-bottom: 28px;
+    }
+
+    h2 {
+        font-size: 1.15rem;
+        margin-bottom: 16px;
+    }
+
+    h2::before {
+        width: 4px;
+        height: 22px;
+    }
+
+    /* Timeline fixes for mobile */
+    .timeline {
+        padding-left: 18px;
+    }
+
+    .timeline::before {
+        left: 5px;
+        width: 2px;
+    }
+
+    .job {
+        padding: 16px 14px 14px 20px;
+        margin-bottom: 14px;
+    }
+
+    .job::before {
+        left: -10px;
+        width: 12px;
+        height: 12px;
+        box-shadow: none;
+        animation: none !important;
+    }
+
+    .job h3 {
+        font-size: 0.95rem;
+    }
+
+    .job-meta {
+        font-size: 0.78rem;
+        line-height: 1.4;
+    }
+
+    .job li {
+        font-size: 0.85rem;
+        padding-left: 14px;
+        margin-bottom: 8px;
+    }
+
+    .job li::before {
+        font-size: 0.85rem;
+    }
+
+    /* Card fixes */
+    .card {
+        padding: 16px;
+    }
+
+    .card b {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .card-bullets li {
+        font-size: 0.82rem;
+        padding-left: 14px;
+    }
+
+    /* Skills section fixes */
+    #skills h3 {
+        font-size: 0.75rem;
+        margin-top: 12px;
+        margin-bottom: 10px;
+    }
+
+    .chips {
+        gap: 8px;
+    }
+
+    .chip {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+
+    /* Stacked list fixes */
+    .stacked-list li {
+        padding: 14px 16px;
+    }
+
+    .stacked-list b {
+        font-size: 0.88rem;
+    }
+
+    .stacked-list p {
+        font-size: 0.82rem;
+    }
+
+    .stacked-list .meta {
+        font-size: 0.78rem;
+    }
+
+    .stacked-list .coursework {
+        font-size: 0.78rem;
+    }
+
+    /* Footer */
     footer {
-        margin: 0 18px;
+        margin: 0 14px;
+        padding: 20px 0;
+        font-size: 0.8rem;
     }
 
     /* Disable ALL tilt/transform effects */
@@ -1101,8 +1289,9 @@ footer {
     }
 
     .reveal-section {
-        opacity: 1;
-        transform: none;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
         transition: none !important;
     }
 
@@ -1110,9 +1299,46 @@ footer {
     .reveal-section .card,
     .reveal-section .card-list>li,
     .reveal-section .stacked-list li,
-    .reveal-section .chip {
+    .reveal-section .chip,
+    .reveal-section.revealed .job,
+    .reveal-section.revealed .card,
+    .reveal-section.revealed .card-list>li,
+    .reveal-section.revealed .stacked-list li,
+    .reveal-section.revealed .chip {
         animation: none !important;
-        opacity: 1;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* Force text colors to be visible on mobile */
+    .job,
+    .job li,
+    .job h3,
+    .job-meta,
+    .card,
+    .card-bullets li,
+    .stacked-list li,
+    .stacked-list p,
+    .stacked-list b,
+    .stacked-list .meta,
+    .stacked-list .coursework,
+    .chip {
+        color: var(--text-main) !important;
+        -webkit-text-fill-color: var(--text-main) !important;
+    }
+
+    .job-meta,
+    .card-bullets li,
+    .stacked-list .meta,
+    .stacked-list .coursework {
+        color: var(--text-muted) !important;
+        -webkit-text-fill-color: var(--text-muted) !important;
+    }
+
+    .job li strong,
+    .card-bullets li strong {
+        color: var(--accent) !important;
+        -webkit-text-fill-color: var(--accent) !important;
     }
 
     /* Disable pulse animation */
@@ -1125,12 +1351,6 @@ footer {
         display: none !important;
     }
 
-    /* Disable job dot glow */
-    .job::before {
-        box-shadow: none;
-        animation: none !important;
-    }
-
     /* Disable magnetic buttons */
     .magnetic-btn {
         transform: none !important;
@@ -1139,13 +1359,33 @@ footer {
     .btn-glow {
         display: none !important;
     }
+}
 
-    /* Disable button effects */
-    .theme-toggle,
-    .btn-primary {
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        transition: none !important;
+/* Extra small screens (320px and below) */
+@media (max-width: 360px) {
+    .header-main>div:first-child h1 {
+        font-size: 1.4rem;
+    }
+
+    .tagline {
+        font-size: 0.85rem;
+    }
+
+    .layout {
+        padding: 16px 12px;
+    }
+
+    .job {
+        padding: 14px 12px 12px 16px;
+    }
+
+    .card {
+        padding: 14px 12px;
+    }
+
+    .chip {
+        font-size: 0.72rem;
+        padding: 5px 10px;
     }
 }
 
