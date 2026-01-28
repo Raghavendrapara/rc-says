@@ -1923,12 +1923,16 @@ footer {
 
     .hero-links {
         flex-direction: column;
-        width: 100%;
+        gap: 4px;
+        align-items: center;
     }
 
     .hero-link {
-        width: 100%;
-        justify-content: center;
+        padding: 8px 12px;
+    }
+
+    .link-divider {
+        display: none;
     }
 
     .hero-actions {
