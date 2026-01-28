@@ -11,336 +11,552 @@
 </head>
 
 <body data-theme="dark">
+    <!-- Animated Background -->
+    <div class="bg-effects">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="mesh-grid"></div>
+    </div>
+
     <!-- Particle Canvas Background -->
     <canvas id="particleCanvas"></canvas>
 
     <!-- Cursor Glow Effect -->
     <div class="cursor-glow" id="cursorGlow"></div>
 
-    <div class="page-shell">
-        <div class="container">
-            <header>
-                <div class="header-main">
-                    <div>
-                        <h1 class="typing-effect" id="heroName">Raghavendra Singh Chauhan</h1>
-                        <p class="tagline">
-                            Software Engineer with 3 years owning critical microservices and infrastructure at Deutsche
-                            Bank. Enjoy diving deep into internals, building scalable systems, debugging, and mentoring.
-                        </p>
-                    </div>
-
-                    <div class="header-actions">
-                        <button class="theme-toggle magnetic-btn" id="themeToggle" type="button"
-                            aria-label="Toggle dark mode">
-                            <span class="btn-text">Dark</span>
-                            <span class="btn-glow"></span>
-                        </button>
-                        <a class="btn-primary magnetic-btn" href="/rc-says/raghavendraCV_2025.pdf" target="_blank"
-                            rel="noopener">
-                            <span class="btn-text">Download Resume</span>
-                            <span class="btn-glow"></span>
-                        </a>
-                    </div>
+    <div class="portfolio-shell">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Available for opportunities</span>
                 </div>
-
-                <nav class="contact-links">
-                    <a href="mailto:raghavendra0360@gmail.com">raghavendra0360@gmail.com</a>
-                    <span class="divider">|</span>
-                    <a href="https://in.linkedin.com/in/raghavendra-singh-chauhan-474a7b155"
-                        target="_blank">LinkedIn</a>
-                    <span class="divider">|</span>
-                    <a href="https://github.com/Raghavendrapara" target="_blank">GitHub</a>
-                    <span class="divider">|</span>
-                    <span class="phone">+91-8240159243</span>
+                <h1 class="hero-name" id="heroName">Raghavendra Singh Chauhan</h1>
+                <p class="hero-tagline">
+                    Software Engineer with 3 years owning critical microservices and infrastructure at Deutsche
+                    Bank. Enjoy diving deep into internals, building scalable systems, debugging, and mentoring.
+                </p>
+                <nav class="hero-links">
+                    <a href="mailto:raghavendra0360@gmail.com" class="hero-link" title="Email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>raghavendra0360@gmail.com</span>
+                    </a>
+                    <span class="link-divider">·</span>
+                    <a href="https://in.linkedin.com/in/raghavendra-singh-chauhan-474a7b155" target="_blank"
+                        class="hero-link" title="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <span class="link-divider">·</span>
+                    <a href="https://github.com/Raghavendrapara" target="_blank" class="hero-link" title="GitHub">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                    <span class="link-divider">·</span>
+                    <span class="hero-link phone" title="Phone">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                        <span>+91-8240159243</span>
+                    </span>
                 </nav>
-            </header>
+                <div class="hero-actions">
+                    <button class="theme-toggle magnetic-btn" id="themeToggle" type="button">
+                        <span class="btn-text">Light</span>
+                    </button>
+                    <a class="btn-primary magnetic-btn" href="/rc-says/raghavendraCV_2025.pdf" target="_blank">
+                        <span class="btn-text">Download Resume</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Scroll to explore</span>
+            </div>
+        </header>
 
-            <main class="layout">
-                <!-- LEFT COLUMN -->
-                <div class="layout-main">
-
-                    <section id="experience" class="reveal-section">
-                        <h2>Professional Experience</h2>
-
-                        <div class="timeline">
-                            <div class="job tilt-card">
-                                <div class="job-header">
-                                    <h3>Career Break</h3>
-                                    <span class="job-meta">Indian Civil Services Examination (Mathematics Optional) ·
-                                        Gurugram, India · Jan 2024 – Nov 2025</span>
+        <!-- 3D Project Carousel Section -->
+        <section id="projects" class="carousel-section">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2>Featured Projects</h2>
+                <p class="section-subtitle">A collection of work that showcases my passion for building</p>
+            </div>
+            <div class="carousel-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Card 1 -->
+                        <div class="carousel-card" data-index="0">
+                            <a href="https://github.com/Raghavendrapara/social-distro" target="_blank" rel="noopener">
+                                <div class="card-glow"></div>
+                                <div class="card-shine"></div>
+                                <div class="card-particles"></div>
+                                <div class="card-inner">
+                                    <div class="card-header">
+                                        <div class="card-icon">
+                                            <span>🧠</span>
+                                        </div>
+                                        <div class="card-badges">
+                                            <span class="tech-badge">Java 25</span>
+                                            <span class="tech-badge">Spring Boot</span>
+                                        </div>
+                                    </div>
+                                    <h3>AI-Powered Knowledge Hub</h3>
+                                    <p class="card-description">Distributed knowledge management with intelligent search
+                                        and RAG capabilities</p>
+                                    <ul class="card-features">
+                                        <li><strong>Virtual Threads</strong> + <strong>Kafka fan-out</strong> for
+                                            parallel LLM embeddings</li>
+                                        <li>Vector search via <strong>pgvector HNSW</strong> + <strong>Redis</strong>
+                                            caching</li>
+                                    </ul>
+                                    <div class="card-footer">
+                                        <span class="view-project">View Project <span class="arrow">→</span></span>
+                                    </div>
                                 </div>
-                                <ul>
-                                    <li>
-                                        <strong>Linear Algebra, Analytics, Numerical Analysis algorithms</strong>;
-                                        ranked in the <strong>top 2%</strong> of 800K+ candidates reached stage-2
-                                    </li>
-                                </ul>
+                            </a>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="carousel-card" data-index="1">
+                            <a href="https://github.com/Raghavendrapara/diffu-syn" target="_blank" rel="noopener">
+                                <div class="card-glow"></div>
+                                <div class="card-shine"></div>
+                                <div class="card-particles"></div>
+                                <div class="card-inner">
+                                    <div class="card-header">
+                                        <div class="card-icon">
+                                            <span>🔬</span>
+                                        </div>
+                                        <div class="card-badges">
+                                            <span class="tech-badge">PyTorch</span>
+                                            <span class="tech-badge">FastAPI</span>
+                                        </div>
+                                    </div>
+                                    <h3>Diffu-Syn</h3>
+                                    <p class="card-description">Synthetic data generation using diffusion models with
+                                        event-driven architecture</p>
+                                    <ul class="card-features">
+                                        <li>Event-driven training with async job orchestration + auto retry</li>
+                                        <li><strong>DDPM diffusion model</strong> for tabular data with
+                                            <strong>Polars</strong>
+                                        </li>
+                                    </ul>
+                                    <div class="card-footer">
+                                        <span class="view-project">View Project <span class="arrow">→</span></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="carousel-card" data-index="2">
+                            <a href="https://github.com/Raghavendrapara/cpp-AuthServer" target="_blank" rel="noopener">
+                                <div class="card-glow"></div>
+                                <div class="card-shine"></div>
+                                <div class="card-particles"></div>
+                                <div class="card-inner">
+                                    <div class="card-header">
+                                        <div class="card-icon">
+                                            <span>🔐</span>
+                                        </div>
+                                        <div class="card-badges">
+                                            <span class="tech-badge">C++</span>
+                                            <span class="tech-badge">gRPC</span>
+                                        </div>
+                                    </div>
+                                    <h3>Distributed Auth System</h3>
+                                    <p class="card-description">High-performance authentication service built for scale
+                                    </p>
+                                    <ul class="card-features">
+                                        <li>High-frequency distributed authentication using <strong>gRPC</strong></li>
+                                        <li>Secure token signing with <strong>ECDSA</strong> cryptography</li>
+                                    </ul>
+                                    <div class="card-footer">
+                                        <span class="view-project">View Project <span class="arrow">→</span></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="carousel-card" data-index="3">
+                            <a href="https://github.com/Raghavendrapara/quant-mill" target="_blank" rel="noopener">
+                                <div class="card-glow"></div>
+                                <div class="card-inner">
+                                    <div class="card-header">
+                                        <div class="card-icon">
+                                            <span>📈</span>
+                                        </div>
+                                        <div class="card-badges">
+                                            <span class="tech-badge">Python</span>
+                                            <span class="tech-badge">Quant</span>
+                                        </div>
+                                    </div>
+                                    <h3>Quant Trading Engine</h3>
+                                    <p class="card-description">Backtesting framework for quantitative trading
+                                        strategies</p>
+                                    <ul class="card-features">
+                                        <li>Quantitative-finance based trading logic</li>
+                                        <li>Strategy validation on historical market datasets</li>
+                                    </ul>
+                                    <div class="card-footer">
+                                        <span class="view-project">View Project <span class="arrow">→</span></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="carousel-card" data-index="4">
+                            <a href="https://github.com/OpenBB-finance/OpenBB/pulls?q=is%3Apr+is%3Aclosed+author%3ARaghavendrapara"
+                                target="_blank" rel="noopener">
+                                <div class="card-glow"></div>
+                                <div class="card-inner">
+                                    <div class="card-header">
+                                        <div class="card-icon">
+                                            <span>⭐</span>
+                                        </div>
+                                        <div class="card-badges">
+                                            <span class="tech-badge">Python</span>
+                                            <span class="tech-badge featured">37k+ ★</span>
+                                        </div>
+                                    </div>
+                                    <h3>OpenBB Terminal (OSS)</h3>
+                                    <p class="card-description">Contributions to the leading open-source investment
+                                        research platform</p>
+                                    <ul class="card-features">
+                                        <li>Merged 2 PRs fixing data integrity issues</li>
+                                        <li>Fixed US rates export + insider trading display</li>
+                                    </ul>
+                                    <div class="card-footer">
+                                        <span class="view-project">View Contributions <span
+                                                class="arrow">→</span></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="carousel-card" data-index="5">
+                            <a href="https://colab.research.google.com/drive/1AcMwmFJhq6rz4bAQGOa7QqleseyUfRqu?usp=sharing"
+                                target="_blank" rel="noopener">
+                                <div class="card-glow"></div>
+                                <div class="card-inner">
+                                    <div class="card-header">
+                                        <div class="card-icon">
+                                            <span>❤️</span>
+                                        </div>
+                                        <div class="card-badges">
+                                            <span class="tech-badge">Deep Learning</span>
+                                            <span class="tech-badge">LSTM</span>
+                                        </div>
+                                    </div>
+                                    <h3>MI Detection</h3>
+                                    <p class="card-description">Neural network for detecting myocardial infarction from
+                                        ECG signals</p>
+                                    <ul class="card-features">
+                                        <li><strong>LSTM</strong> binary classifier trained on PTB ECG data</li>
+                                        <li>Outperformed CNN-based models in detection accuracy</li>
+                                    </ul>
+                                    <div class="card-footer">
+                                        <span class="view-project">View Notebook <span class="arrow">→</span></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-prev" id="carouselPrev" aria-label="Previous project">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="carousel-nav carousel-next" id="carouselNext" aria-label="Next project">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+            </div>
+        </section>
+
+        <!-- Experience Section with Flowing Cards -->
+        <section id="experience" class="experience-section">
+            <div class="section-header">
+                <span class="section-tag">Experience</span>
+                <h2>Professional Journey</h2>
+                <p class="section-subtitle">From open source to enterprise-scale systems</p>
+            </div>
+
+            <div class="experience-carousel">
+                <div class="exp-track" id="expTrack">
+                    <!-- Experience 1: Career Break -->
+                    <div class="exp-card" data-index="0">
+                        <div class="exp-card-inner">
+                            <div class="exp-shine"></div>
+                            <div class="exp-glow"></div>
+                            <div class="exp-timeline">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-line"></div>
                             </div>
-
-                            <div class="job tilt-card">
-                                <div class="job-header">
-                                    <h3>Software Engineer (Associate)</h3>
-                                    <span class="job-meta">Deutsche Bank · Pune, India · September 2023 – December
-                                        2023</span>
+                            <div class="exp-content">
+                                <div class="exp-header">
+                                    <span class="exp-number">01</span>
+                                    <div class="exp-date">
+                                        <span class="date-range">Jan 2024 – Nov 2025</span>
+                                        <span class="location">📍 Gurugram, India</span>
+                                    </div>
                                 </div>
-                                <ul>
+                                <h3>Career Break</h3>
+                                <p class="exp-company">Indian Civil Services Examination (Mathematics Optional)</p>
+                                <ul class="exp-achievements">
                                     <li>
-                                        Achieved fast-track promotion to Associate (SDE-II) for consistent performance
-                                        excellence, mentorship, and <strong>autonomous ownership</strong> of critical
-                                        microservices
+                                        Deep study of <strong>Linear Algebra, Analytics, Numerical Analysis
+                                            algorithms</strong>
                                     </li>
                                     <li>
-                                        Built and scaled Spring Boot data-ingestion microservices (<strong>50M+
-                                            records/day</strong>) using MQ and Spark, with 80%+ test coverage and mTLS
-                                        encryption
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="job tilt-card">
-                                <div class="job-header">
-                                    <h3>Software Engineer (Analyst)</h3>
-                                    <span class="job-meta">Deutsche Bank · Pune, India · July 2021 – September
-                                        2023</span>
-                                </div>
-                                <ul>
-                                    <li>
-                                        <strong>Owned JVM tuning for 24-node Hazelcast cluster</strong>—analyzed G1GC
-                                        logs, adjusted heap configuration based on server capacity analysis, and led
-                                        post-deployment monitoring to ensure stability during high-load cVA runs
-                                    </li>
-                                    <li>
-                                        Co-led Gravity modernization-rebuilt data ingestion as event-driven pipeline,
-                                        delivering <strong>$500K annual savings</strong>
-                                    </li>
-                                    <li>
-                                        Drove Hazelcast 4.x & Camel 3.x upgrade across tightly-coupled modular
-                                        monolith—<strong>deep-dived documentation, debugged config
-                                            migrations</strong>, retuned parameters, <strong>averting 8-week compliance
-                                            delay</strong>
-                                    </li>
-                                    <li>
-                                        Strengthened engineering practices across team—automated repetitive workflows,
-                                        enforced pre-commit hooks, led KT sessions, and contributed to Cucumber/Mockito
-                                        QA test suites
-                                    </li>
-                                    <li>
-                                        Optimized Drools engine via HashMap lookups, <strong>reducing rule-evaluation
-                                            latency 20%</strong>
-                                    </li>
-                                    <li>
-                                        Resolved production outages and averted regulatory impact by isolating data
-                                        corruption across 160M+ records
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="job tilt-card">
-                                <div class="job-header">
-                                    <h3>Google Summer of Code 2020 Student Developer</h3>
-                                    <span class="job-meta">INCF Belgian Node · Remote · May 2020 – September 2020</span>
-                                </div>
-                                <ul>
-                                    <li>
-                                        Developed cell-tracking module using the <strong>Viterbi Algorithm</strong>,
-                                        ImageJ, delivering the first production-ready iteration
-                                    </li>
-                                    <li>
-                                        Improved tracker performance by reducing algorithmic complexity from
-                                        <strong>cubic O(n³) to quadratic O(n²)</strong>
+                                        Ranked in the <strong>top 2%</strong> of 800K+ candidates, reaching stage-2
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
-                    <section id="projects" class="reveal-section">
-                        <h2>Projects</h2>
-                        <ul class="card-list">
-                            <li>
-                                <a href="https://github.com/Raghavendrapara/social-distro" target="_blank"
-                                    rel="noopener" class="card-link">
-                                    <div class="card tilt-card">
-                                        <b>AI-Powered Knowledge Hub | Java 25, Spring Boot, Kafka, pgvector</b>
-                                        <ul class="card-bullets">
-                                            <li>Distributed indexing with <strong>Virtual Threads</strong> +
-                                                <strong>Kafka fan-out</strong> for parallel LLM embeddings
-                                            </li>
-                                            <li>Vector search via <strong>pgvector HNSW</strong> +
-                                                <strong>Redis</strong> caching for low-latency RAG
-                                            </li>
-                                        </ul>
+                    <!-- Experience 2: Associate -->
+                    <div class="exp-card" data-index="1">
+                        <div class="exp-card-inner">
+                            <div class="exp-timeline">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-line"></div>
+                            </div>
+                            <div class="exp-content">
+                                <div class="exp-header">
+                                    <span class="exp-number">02</span>
+                                    <div class="exp-date">
+                                        <span class="date-range">Sep 2023 – Dec 2023</span>
+                                        <span class="location">📍 Pune, India</span>
                                     </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/Raghavendrapara/diffu-syn" target="_blank" rel="noopener"
-                                    class="card-link">
-                                    <div class="card tilt-card">
-                                        <b>Diffu-Syn: Synthetic Data Generator | PyTorch, FastAPI, Celery, Redis</b>
-                                        <ul class="card-bullets">
-                                            <li>Event-driven training platform with async job orchestration + auto retry
-                                            </li>
-                                            <li><strong>DDPM diffusion model</strong> for tabular data with
-                                                <strong>Polars</strong> streaming
-                                            </li>
-                                        </ul>
+                                </div>
+                                <h3>Software Engineer (Associate)</h3>
+                                <p class="exp-company">Deutsche Bank</p>
+                                <ul class="exp-achievements">
+                                    <li>Fast-track promotion to Associate (SDE-II) for <strong>autonomous
+                                            ownership</strong> of critical microservices</li>
+                                    <li>Built Spring Boot data-ingestion microservices processing <strong>50M+
+                                            records/day</strong></li>
+                                    <li>Implemented MQ and Spark pipelines with 80%+ test coverage and mTLS encryption
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3: Analyst -->
+                    <div class="exp-card" data-index="2">
+                        <div class="exp-card-inner">
+                            <div class="exp-timeline">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-line"></div>
+                            </div>
+                            <div class="exp-content">
+                                <div class="exp-header">
+                                    <span class="exp-number">03</span>
+                                    <div class="exp-date">
+                                        <span class="date-range">Jul 2021 – Sep 2023</span>
+                                        <span class="location">📍 Pune, India</span>
                                     </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/Raghavendrapara/cpp-AuthServer" target="_blank"
-                                    rel="noopener" class="card-link">
-                                    <div class="card tilt-card">
-                                        <b>Distributed Auth System | C++, gRPC, ECDSA</b>
-                                        <ul class="card-bullets">
-                                            <li>High-frequency distributed authentication using <strong>gRPC</strong>
-                                            </li>
-                                            <li>Secure token signing with <strong>ECDSA</strong> cryptography</li>
-                                        </ul>
+                                </div>
+                                <h3>Software Engineer (Analyst)</h3>
+                                <p class="exp-company">Deutsche Bank</p>
+                                <ul class="exp-achievements">
+                                    <li><strong>Owned JVM tuning</strong> for 24-node Hazelcast cluster—analyzed G1GC
+                                        logs for high-load cVA runs</li>
+                                    <li>Co-led Gravity modernization delivering <strong>$500K annual savings</strong>
+                                    </li>
+                                    <li>Drove Hazelcast 4.x & Camel 3.x upgrade—<strong>averting 8-week compliance
+                                            delay</strong></li>
+                                    <li>Optimized Drools engine, <strong>reducing rule-evaluation latency 20%</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 4: GSoC -->
+                    <div class="exp-card" data-index="3">
+                        <div class="exp-card-inner">
+                            <div class="exp-timeline">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-line"></div>
+                            </div>
+                            <div class="exp-content">
+                                <div class="exp-header">
+                                    <span class="exp-number">04</span>
+                                    <div class="exp-date">
+                                        <span class="date-range">May 2020 – Sep 2020</span>
+                                        <span class="location">🌐 Remote</span>
                                     </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/Raghavendrapara/quant-mill" target="_blank" rel="noopener"
-                                    class="card-link">
-                                    <div class="card tilt-card">
-                                        <b>Quant Trading Backtesting Engine | Python</b>
-                                        <ul class="card-bullets">
-                                            <li>Quantitative-finance based trading logic</li>
-                                            <li>Strategy validation on historical market datasets</li>
-                                        </ul>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/OpenBB-finance/OpenBB/pulls?q=is%3Apr+is%3Aclosed+author%3ARaghavendrapara"
-                                    target="_blank" rel="noopener" class="card-link">
-                                    <div class="card tilt-card">
-                                        <b>OpenBB Terminal (OSS) | Python, 37k+ stars</b>
-                                        <ul class="card-bullets">
-                                            <li>Merged 2 PRs fixing data integrity issues</li>
-                                            <li>Fixed US rates export + insider trading display order</li>
-                                        </ul>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://colab.research.google.com/drive/1AcMwmFJhq6rz4bAQGOa7QqleseyUfRqu?usp=sharing"
-                                    target="_blank" rel="noopener" class="card-link">
-                                    <div class="card tilt-card">
-                                        <b>MI Detection | Deep Learning, Python</b>
-                                        <ul class="card-bullets">
-                                            <li><strong>LSTM</strong> binary classifier trained on PTB ECG data</li>
-                                            <li>Outperformed CNN-based models in detection accuracy</li>
-                                        </ul>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </section>
+                                </div>
+                                <h3>Google Summer of Code</h3>
+                                <p class="exp-company">INCF Belgian Node · Student Developer</p>
+                                <ul class="exp-achievements">
+                                    <li>Developed cell-tracking module using the <strong>Viterbi Algorithm</strong> with
+                                        ImageJ</li>
+                                    <li>Improved performance by reducing complexity from <strong>O(n³) to O(n²)</strong>
+                                    </li>
+                                    <li>Delivered the first <strong>production-ready</strong> iteration of the tracker
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- RIGHT COLUMN -->
-                <aside class="layout-side">
-                    <section id="skills" class="reveal-section">
-                        <h2>Software Engineering Skills</h2>
-                        <div class="skills-chips-group">
-                            <h3>Languages & Frameworks</h3>
-                            <div class="chips">
-                                <span class="chip pulse-chip">Java</span>
-                                <span class="chip pulse-chip">Spring</span>
-                                <span class="chip pulse-chip">Spring Boot</span>
-                                <span class="chip pulse-chip">Python</span>
-                                <span class="chip pulse-chip">SQL</span>
-                            </div>
+                <div class="exp-nav">
+                    <button class="exp-btn exp-prev" id="expPrev">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        <span>Previous</span>
+                    </button>
+                    <div class="exp-progress">
+                        <div class="exp-progress-bar" id="expProgressBar"></div>
+                    </div>
+                    <button class="exp-btn exp-next" id="expNext">
+                        <span>Next</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
 
-                            <h3>Infrastructure</h3>
-                            <div class="chips">
-                                <span class="chip pulse-chip">Hazelcast</span>
-                                <span class="chip pulse-chip">Spark</span>
-                                <span class="chip pulse-chip">Kafka</span>
-                                <span class="chip pulse-chip">Redis</span>
-                                <span class="chip pulse-chip">Elasticsearch</span>
-                                <span class="chip pulse-chip">GCP</span>
-                                <span class="chip pulse-chip">AWS</span>
-                                <span class="chip pulse-chip">Docker</span>
-                            </div>
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="section-header">
+                <span class="section-tag">Expertise</span>
+                <h2>Technical Arsenal</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-icon">💻</div>
+                    <h3>Languages & Frameworks</h3>
+                    <div class="chips">
+                        <span class="chip">Java</span>
+                        <span class="chip">Spring</span>
+                        <span class="chip">Spring Boot</span>
+                        <span class="chip">Python</span>
+                        <span class="chip">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon">🏗️</div>
+                    <h3>Infrastructure</h3>
+                    <div class="chips">
+                        <span class="chip">Hazelcast</span>
+                        <span class="chip">Spark</span>
+                        <span class="chip">Kafka</span>
+                        <span class="chip">Redis</span>
+                        <span class="chip">Elasticsearch</span>
+                        <span class="chip">GCP</span>
+                        <span class="chip">AWS</span>
+                        <span class="chip">Docker</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon">🧩</div>
+                    <h3>Concepts</h3>
+                    <div class="chips">
+                        <span class="chip">Distributed Systems</span>
+                        <span class="chip">Concurrency</span>
+                        <span class="chip">System Design</span>
+                        <span class="chip">OOP</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon">🤖</div>
+                    <h3>AI/ML</h3>
+                    <div class="chips">
+                        <span class="chip">LLM Integration</span>
+                        <span class="chip">RAG</span>
+                        <span class="chip">pgvector</span>
+                        <span class="chip">HNSW</span>
+                        <span class="chip">PyTorch</span>
+                        <span class="chip">Diffusion Models</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                            <h3>Concepts</h3>
-                            <div class="chips">
-                                <span class="chip pulse-chip">Distributed Systems</span>
-                                <span class="chip pulse-chip">Concurrency</span>
-                                <span class="chip pulse-chip">System Design</span>
-                                <span class="chip pulse-chip">OOP</span>
-                            </div>
-
-                            <h3>Others</h3>
-                            <div class="chips">
-                                <span class="chip pulse-chip">REST</span>
-                                <span class="chip pulse-chip">gRPC</span>
-                                <span class="chip pulse-chip">Terraform</span>
-                                <span class="chip pulse-chip">SonarQube</span>
-                                <span class="chip pulse-chip">JUnit</span>
-                                <span class="chip pulse-chip">Mockito</span>
-                            </div>
-
-                            <h3>AI/ML</h3>
-                            <div class="chips">
-                                <span class="chip pulse-chip">LLM Integration</span>
-                                <span class="chip pulse-chip">RAG</span>
-                                <span class="chip pulse-chip">pgvector</span>
-                                <span class="chip pulse-chip">HNSW</span>
-                                <span class="chip pulse-chip">PyTorch</span>
-                                <span class="chip pulse-chip">Diffusion Models</span>
-                            </div>
+        <!-- Education & Achievements -->
+        <section id="about" class="about-section">
+            <div class="about-grid">
+                <div class="about-card education-card">
+                    <div class="card-decoration"></div>
+                    <h2>🎓 Education</h2>
+                    <div class="about-item featured">
+                        <h3>IIEST Shibpur</h3>
+                        <p>B.Tech in Electronics & Telecommunications</p>
+                        <div class="stat-highlight">
+                            <span class="stat-value">9.15</span>
+                            <span class="stat-label">/ 10 CGPA</span>
                         </div>
-                    </section>
+                        <p class="meta">West Bengal, India · 2017 – 2021</p>
+                    </div>
+                </div>
+                <div class="about-card achievements-card">
+                    <div class="card-decoration"></div>
+                    <h2>🏆 Achievements</h2>
+                    <div class="about-item">
+                        <div class="achievement-icon">💰</div>
+                        <div>
+                            <h3>Deutsche Bank Recognition Award 2022</h3>
+                            <p class="meta">Cash reward for delivering critical modules</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="achievement-icon">📜</div>
+                        <div>
+                            <h3>Certifications</h3>
+                            <p class="meta">Spring Professional, deeplearning.ai RAG, AWS Bedrock</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="achievement-icon">🎖️</div>
+                        <div>
+                            <h3>Indian Army SSB Selection (2017)</h3>
+                            <p class="meta">Cleared 5-day evaluation for Engineers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <section id="education" class="reveal-section">
-                        <h2>Academics</h2>
-                        <ul class="stacked-list">
-                            <li class="tilt-card">
-                                <b>Indian Institute of Engineering Science & Technology Shibpur</b>
-                                <p>B.Tech in Electronics & Telecommunications; CGPA: 9.15/10</p>
-                                <p class="meta">WB, India · July 2017 – June 2021</p>
-                                <p class="coursework">DSA, Database management systems, Soft Computing, Digital Signal
-                                    Processing, Computer Networks</p>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <section id="accomplishments" class="reveal-section">
-                        <h2>Achievements</h2>
-                        <ul class="stacked-list">
-                            <li class="tilt-card">
-                                <b>Certifications</b>
-                                <p class="meta">
-                                    MarcoBehler(JetBrains) Spring Professional, deeplearning.ai RAG, Educative AWS
-                                    Bedrock
-                                </p>
-                            </li>
-                            <li class="tilt-card">
-                                <b>Deutsche Bank Recognition Award 2022</b>
-                                <p class="meta">
-                                    Cash reward for delivering critical modules and demonstrating ownership.
-                                </p>
-                            </li>
-                            <li class="tilt-card">
-                                <b>Indian Army Officer Selection (Engineers - 2017)</b>
-                                <p class="meta">
-                                    Cleared SSB 5-day evaluation of IQ, EQ, personality, and leadership traits.
-                                </p>
-                            </li>
-                        </ul>
-                    </section>
-                </aside>
-            </main>
-
-            <footer>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
                 <p>© 2025 · Raghavendra Singh Chauhan</p>
-            </footer>
-        </div>
+                <p class="footer-tagline">Built with passion ❤️</p>
+            </div>
+        </footer>
     </div>
 
     <script>
@@ -363,16 +579,16 @@
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 1;
+                this.size = Math.random() * 2.5 + 0.5;
                 this.baseX = this.x;
                 this.baseY = this.y;
                 this.density = Math.random() * 30 + 1;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
+                this.vx = (Math.random() - 0.5) * 0.8;
+                this.vy = (Math.random() - 0.5) * 0.8;
+                this.hue = Math.random() * 60 + 220; // Blue-purple range
             }
 
             update() {
-                // Mouse interaction
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
                 let distance = Math.sqrt(dx * dx + dy * dy);
@@ -387,11 +603,8 @@
                     this.x -= directionX;
                     this.y -= directionY;
                 } else {
-                    // Gentle floating movement
                     this.x += this.vx;
                     this.y += this.vy;
-
-                    // Wrap around screen
                     if (this.x < 0) this.x = canvas.width;
                     if (this.x > canvas.width) this.x = 0;
                     if (this.y < 0) this.y = canvas.height;
@@ -401,7 +614,8 @@
 
             draw() {
                 const isDark = document.body.dataset.theme === 'dark';
-                ctx.fillStyle = isDark ? 'rgba(129, 140, 248, 0.6)' : 'rgba(99, 102, 241, 0.5)';
+                const alpha = isDark ? 0.8 : 0.6;
+                ctx.fillStyle = `hsla(${this.hue}, 70%, 60%, ${alpha})`;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.closePath();
@@ -411,7 +625,7 @@
 
         function initParticles() {
             particles = [];
-            const numberOfParticles = Math.min((canvas.width * canvas.height) / 12000, 120);
+            const numberOfParticles = Math.min((canvas.width * canvas.height) / 8000, 150);
             for (let i = 0; i < numberOfParticles; i++) {
                 particles.push(new Particle());
             }
@@ -425,11 +639,15 @@
                     let dy = particles[a].y - particles[b].y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
 
-                    if (distance < 120) {
-                        let opacity = 1 - distance / 120;
-                        ctx.strokeStyle = isDark
-                            ? `rgba(129, 140, 248, ${opacity * 0.3})`
-                            : `rgba(99, 102, 241, ${opacity * 0.2})`;
+                    if (distance < 150) {
+                        let opacity = (1 - distance / 150) * (isDark ? 0.4 : 0.25);
+                        const gradient = ctx.createLinearGradient(
+                            particles[a].x, particles[a].y,
+                            particles[b].x, particles[b].y
+                        );
+                        gradient.addColorStop(0, `hsla(${particles[a].hue}, 70%, 60%, ${opacity})`);
+                        gradient.addColorStop(1, `hsla(${particles[b].hue}, 70%, 60%, ${opacity})`);
+                        ctx.strokeStyle = gradient;
                         ctx.lineWidth = 1;
                         ctx.beginPath();
                         ctx.moveTo(particles[a].x, particles[a].y);
@@ -476,8 +694,8 @@
         });
 
         function animateCursorGlow() {
-            glowX += (cursorX - glowX) * 0.1;
-            glowY += (cursorY - glowY) * 0.1;
+            glowX += (cursorX - glowX) * 0.08;
+            glowY += (cursorY - glowY) * 0.08;
             cursorGlow.style.left = glowX + 'px';
             cursorGlow.style.top = glowY + 'px';
             requestAnimationFrame(animateCursorGlow);
@@ -485,44 +703,165 @@
         animateCursorGlow();
 
         // =============================================
-        // 3D TILT EFFECT ON CARDS
+        // 3D CAROUSEL - SMOOTH INFINITE ROTATION
         // =============================================
-        const tiltCards = document.querySelectorAll('.tilt-card');
+        const carouselTrack = document.getElementById('carouselTrack');
+        const carouselCards = document.querySelectorAll('.carousel-card');
+        const carouselPrev = document.getElementById('carouselPrev');
+        const carouselNext = document.getElementById('carouselNext');
+        const carouselIndicators = document.getElementById('carouselIndicators');
 
-        tiltCards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 20;
-                const rotateY = (centerX - x) / 20;
+        let currentAngle = 0;
+        let currentCarouselIndex = 0;
+        const totalCards = carouselCards.length;
+        const anglePerCard = 360 / totalCards;
+        const radius = 450;
 
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-            });
+        // Create indicators
+        carouselCards.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            carouselIndicators.appendChild(dot);
         });
 
-        // =============================================
-        // SCROLL REVEAL ANIMATION
-        // =============================================
-        const revealSections = document.querySelectorAll('.reveal-section');
+        // Position cards in 3D space
+        carouselCards.forEach((card, i) => {
+            const angle = i * anglePerCard;
+            card.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
+        });
 
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
+        function updateCarousel(animate = true) {
+            if (animate) {
+                carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+            } else {
+                carouselTrack.style.transition = 'none';
+            }
+            carouselTrack.style.transform = `rotateY(${currentAngle}deg)`;
+
+            // Update active states
+            const normalizedIndex = (((-currentAngle / anglePerCard) % totalCards) + totalCards) % totalCards;
+            currentCarouselIndex = Math.round(normalizedIndex) % totalCards;
+
+            carouselCards.forEach((card, i) => {
+                card.classList.remove('active', 'adjacent');
+                if (i === currentCarouselIndex) {
+                    card.classList.add('active');
+                } else if (
+                    i === (currentCarouselIndex + 1) % totalCards ||
+                    i === (currentCarouselIndex - 1 + totalCards) % totalCards
+                ) {
+                    card.classList.add('adjacent');
                 }
             });
-        }, { threshold: 0.1 });
 
-        revealSections.forEach(section => {
-            revealObserver.observe(section);
+            // Update indicators
+            document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentCarouselIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            const diff = index - currentCarouselIndex;
+            currentAngle -= diff * anglePerCard;
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            currentAngle -= anglePerCard;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentAngle += anglePerCard;
+            updateCarousel();
+        }
+
+        carouselNext.addEventListener('click', nextSlide);
+        carouselPrev.addEventListener('click', prevSlide);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
         });
+
+        updateCarousel(false);
+
+        // =============================================
+        // EXPERIENCE CAROUSEL - INFINITE LOOP
+        // =============================================
+        const expTrack = document.getElementById('expTrack');
+        const expCards = document.querySelectorAll('.exp-card');
+        const expPrev = document.getElementById('expPrev');
+        const expNext = document.getElementById('expNext');
+        const expProgressBar = document.getElementById('expProgressBar');
+
+        let currentExpIndex = 0;
+        const totalExps = expCards.length;
+
+        function updateExperience() {
+            // Calculate the offset and apply classes
+            expCards.forEach((card, i) => {
+                card.classList.remove('active', 'prev', 'next', 'far');
+
+                let relativePos = i - currentExpIndex;
+
+                // Handle wrapping for infinite loop
+                if (relativePos > totalExps / 2) relativePos -= totalExps;
+                if (relativePos < -totalExps / 2) relativePos += totalExps;
+
+                // Add appropriate class (CSS handles z-index and opacity)
+                if (relativePos === 0) {
+                    card.classList.add('active');
+                } else if (relativePos === 1) {
+                    card.classList.add('next');
+                } else if (relativePos === -1) {
+                    card.classList.add('prev');
+                } else {
+                    card.classList.add('far');
+                }
+
+                // Only set transform - CSS handles z-index/opacity via classes
+                const offset = relativePos * 110; // Slightly more offset to prevent overlap
+                const scale = relativePos === 0 ? 1 : 0.88;
+                card.style.transform = `translateX(${offset}%) scale(${scale})`;
+            });
+
+            // Update progress bar
+            const progress = ((currentExpIndex + 1) / totalExps) * 100;
+            expProgressBar.style.width = `${progress}%`;
+        }
+
+        function nextExp() {
+            currentExpIndex = (currentExpIndex + 1) % totalExps;
+            updateExperience();
+        }
+
+        function prevExp() {
+            currentExpIndex = (currentExpIndex - 1 + totalExps) % totalExps;
+            updateExperience();
+        }
+
+        expNext.addEventListener('click', nextExp);
+        expPrev.addEventListener('click', prevExp);
+
+        // Touch/swipe support for experience
+        let expTouchStartX = 0;
+        let expTouchEndX = 0;
+
+        expTrack.addEventListener('touchstart', e => {
+            expTouchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        expTrack.addEventListener('touchend', e => {
+            expTouchEndX = e.changedTouches[0].screenX;
+            if (expTouchStartX - expTouchEndX > 50) nextExp();
+            if (expTouchEndX - expTouchStartX > 50) prevExp();
+        }, { passive: true });
+
+        updateExperience();
 
         // =============================================
         // MAGNETIC BUTTON EFFECT
@@ -534,12 +873,29 @@
                 const rect = btn.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
-                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
             });
 
             btn.addEventListener('mouseleave', () => {
                 btn.style.transform = 'translate(0, 0)';
             });
+        });
+
+        // =============================================
+        // SCROLL REVEAL
+        // =============================================
+        const revealSections = document.querySelectorAll('.carousel-section, .experience-section, .skills-section, .about-section');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealSections.forEach(section => {
+            revealObserver.observe(section);
         });
 
         // =============================================
@@ -557,10 +913,6 @@
             function updateToggleLabel() {
                 const isDark = body.dataset.theme === 'dark';
                 toggle.querySelector('.btn-text').textContent = isDark ? 'Light' : 'Dark';
-                toggle.setAttribute(
-                    'aria-label',
-                    isDark ? 'Switch to light mode' : 'Switch to dark mode'
-                );
             }
 
             updateToggleLabel();
@@ -574,22 +926,12 @@
                 body.dataset.theme = next;
                 window.localStorage.setItem('theme', next);
                 updateToggleLabel();
-
-                // Reinitialize particles for new theme colors
                 initParticles();
             }
 
             toggle.addEventListener('pointerup', handleToggleEvent);
             toggle.addEventListener('click', handleToggleEvent);
         })();
-
-        // =============================================
-        // STAGGERED CHIP ANIMATION
-        // =============================================
-        const chips = document.querySelectorAll('.pulse-chip');
-        chips.forEach((chip, index) => {
-            chip.style.animationDelay = `${index * 0.05}s`;
-        });
     </script>
 </body>
 
