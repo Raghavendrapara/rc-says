@@ -1,0 +1,87 @@
+Raghavendra Singh Chauhan
+Software Engineer
+raghavendra0360@gmail.com | LinkedIn | Github
++91-8240159243
+SKILLS
+Languages & Frameworks : Java, Spring Boot, Go, Gin, Python, SQL
+Infrastructure : Kafka, Spark, Redis, Elasticsearch, Docker, AWS, GCP, Hazelcast, CI/CD
+AI/ML : LLM Integration, RAG, Vector Databases (pgvector, HNSW), PyTorch, Data Pipelines, Model Serving
+Others : REST, gRPC, Terraform, SonarQube, JUnit, Mockito, React, TypeScript, Distributed Systems, Concurrency
+PROFESSIONAL EXPERIENCE
+OSTO Cybersecurity
+Gurugram, India
+SDE-2
+Feb 2026 – Jun 2026
+◦
+Architected a cloud-native compliance automation platform with per-tenant PostgreSQL isolation, eliminating dependency on
+third-party compliance providers
+◦
+Designed reusable evidence collectors and a framework-agnostic control mapping engine
+◦
+Engineered a cloud-native telemetry ingestion platform using mTLS, Azure Event Hubs, Azure Functions, Log Analytics, and
+PostgreSQL (LISTEN/NOTIFY) for scalable event ingestion and active-response
+UPSC Civil Services Examination
+India
+Reached Civil Services Mains — Top 2% of 800K+ candidates
+Jan 2024 – Nov 2025
+Deutsche Bank
+Pune, India
+Software Engineer (Associate)
+July 2021 – December 2023
+◦
+Fast-tracked to Associate (SDE-2) for consistently exceeding expectations, independently driving modernization initiatives, and
+mentoring junior engineers
+◦
+Built and scaled Spring Boot data-ingestion microservices processing 50M+ records/day using MQ and Spark with 80%+
+automated test coverage and mTLS-secured communication
+◦
+Co-led modernization of the Gravity platform by decomposing a legacy monolith into an event-driven ingestion pipeline,
+delivering approximately $500K annual infrastructure savings
+◦
+Owned JVM performance tuning for a 24-node Hazelcast cluster, optimizing G1GC configuration and eliminating GC-induced
+latency during high-volume cVA risk calculations
+◦
+Optimized Drools rule evaluation using HashMap-based indexing and incremental loading, reducing rule execution latency by
+nearly 40%
+◦
+Led the Hazelcast 4.x and Apache Camel 3.x upgrade across a tightly coupled monolith, preventing an estimated 8-week
+regulatory compliance delay
+◦
+Resolved production incidents involving 160M+ financial records, identifying data corruption root causes and restoring
+business-critical processing under strict regulatory timelines
+◦
+Improved engineering productivity by automating repetitive workflows, introducing pre-commit quality gates, leading
+knowledge-transfer sessions, and contributing to Cucumber/Mockito test automation
+PROJECTS
+B2B Lead Intelligence Platform | Python, FastAPI, PostgreSQL, SQLAlchemy, Docker
+◦
+Built a deterministic lead-scoring engine (auditable rule-based weights, 1–100 scale) with LLM enrichment and trigger
+detection over a repository-pattern data layer
+◦
+Automated discovery via Google Places API with retry/backoff handling; deployed on Docker Compose to support a B2B
+merchandise sales pipeline
+AI-Powered Knowledge Hub | Java 25, Spring Boot, Kafka, pgvector
+◦
+Distributed indexing pipeline using Virtual Threads and Kafka fan-out for parallel LLM embedding generation
+◦
+Vector similarity search with pgvector HNSW indexes and Redis caching for low-latency RAG queries
+Diffu-Syn: Synthetic Data Generator | PyTorch, FastAPI, Celery, Redis
+◦
+Event-driven training platform with async job orchestration and automatic retry logic
+◦
+DDPM-based diffusion model for tabular data with Polars streaming for larger-than-RAM datasets
+OpenBB Terminal (OSS, 37k+ stars) | Python
+◦
+Merged 2 PRs fixing data integrity issues in US rates export and insider trading display
+ACADEMICS
+Indian Institute Of Engineering Science & Technology Shibpur
+WB, India
+B.Tech in Electronics & Telecommunications; CGPA: 9.15/10
+July 2017 – June 2021
+◦
+DSA, Database management systems, Soft Computing, Digital Signal Processing, Computer Networks
+ACHIEVEMENTS
+Certifications : MarcoBehler (JetBrains) Spring Professional, deeplearning.ai RAG, Educative AWS Bedrock
+Rewards : Deutsche Bank Recognition Award 2022
+Leadership : Indian Army Engineers (2017) — Cleared SSB 5-day eval of IQ, EQ, and leadership
+

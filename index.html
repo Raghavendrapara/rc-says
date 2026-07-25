@@ -4,21 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Raghavendra Singh Chauhan — Software Engineer</title>
-  <meta name="description" content="Software engineer specializing in distributed systems and security infrastructure. SDE-2 at OSTO Cybersecurity. Previously at Deutsche Bank.">
+  <meta name="description" content="Software engineer specializing in backend engineering, distributed systems, and security infrastructure.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Inline script to prevent FOUC (Flash of Unstyled Content)
+    // Dark mode is default. Only set light mode if explicitly saved.
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
 </head>
 <body>
 
+  <!-- Ambient glowing background effect -->
+  <div class="ambient-glow"></div>
+
   <nav class="site-nav" id="siteNav">
     <a href="#home" class="nav-wordmark">RC</a>
-    <div class="nav-links">
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="raghavendraCV_2025.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="Raghavendra_EJ_2026.pdf" target="_blank" class="nav-resume">Resume ↗</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <!-- Sun Icon for Light Mode Activation (visible in Dark Mode) -->
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <!-- Moon Icon for Dark Mode Activation (visible in Light Mode) -->
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/>
+        </svg>
+      </button>
     </div>
   </nav>
 
@@ -29,11 +51,11 @@
       <div class="container">
         <div class="hero-badge">
           <span class="badge-dot"></span>
-          SDE-2 · OSTO Cybersecurity · Open to select opportunities
+          Software Engineer &nbsp;·&nbsp; Backend & AI Systems
         </div>
         <h1 class="hero-name">Raghavendra<br>Singh Chauhan</h1>
         <div class="hero-rule"></div>
-        <p class="hero-sub">Software Engineer &nbsp;·&nbsp; Distributed Systems &nbsp;·&nbsp; Security Infrastructure</p>
+        <p class="hero-sub">Backend Engineering &nbsp;·&nbsp; Multi-Agent Workflows &nbsp;·&nbsp; Security Infrastructure</p>
         <div class="hero-contact">
           <a href="mailto:raghavendra0360@gmail.com">raghavendra0360@gmail.com</a>
           <span class="dot">·</span>
@@ -41,7 +63,7 @@
           <span class="dot">·</span>
           <a href="https://in.linkedin.com/in/raghavendra-singh-chauhan-474a7b155" target="_blank" rel="noopener">LinkedIn</a>
           <span class="dot">·</span>
-          <a href="raghavendraCV_2025.pdf" target="_blank">Download Resume</a>
+          <a href="Raghavendra_EJ_2026.pdf" target="_blank">Download Resume</a>
         </div>
       </div>
     </section>
@@ -50,13 +72,13 @@
     <section class="about-section" id="about">
       <div class="container">
         <p class="about-lead">
-          I'm drawn to the deep end — systems that are hard to reason about, problems most engineers avoid, ideas that don't fit neatly into frameworks.
+          I build resilient, distributed platforms and agentic workflows that operate deterministically at scale.
         </p>
         <p class="about-body">
-          I spent 2.5 years at Deutsche Bank building high-throughput data pipelines and tuning JVMs for heavily-loaded clusters. Seeking intellectual rigor, I took a deliberate sabbatical to attempt India's civil services exam with Mathematics, placing in the <strong>top 2% of 800,000+ candidates</strong>.
+          Most recently, I architected a multi-framework compliance automation and EDR platform at an early-stage cybersecurity startup, leveraging DAG-based mappings and autonomous multi-agent pipelines to scale to thousands of tenants. Before that, I spent 2.5 years at Deutsche Bank engineering high-throughput microservices and optimizing heavily-loaded JVM clusters.
         </p>
         <p class="about-body">
-          Today, I'm architecting compliance automation at a cybersecurity startup. I build systems that help growing startups verify SOC2, ISO 27001, HIPAA, and GDPR alignment automatically. Mathematics and systems programming both reward rigorous thinking and punish imprecision — moving between these disciplines has made me a more careful, deliberate engineer.
+          I am drawn to systems that demand deep reasoning—whether that means scaling retrieval-augmented generation (RAG) over vast vector topologies, orchestrating asynchronous training pipelines, or taking a deliberate sabbatical to study pure mathematics for India's civil services exam (ranking in the <strong>top 1% of 800,000+ candidates</strong>).
         </p>
       </div>
     </section>
@@ -74,27 +96,27 @@
                 <span class="exp-company">OSTO Cybersecurity</span>
                 <span class="exp-location">Gurugram, India</span>
               </div>
-              <span class="exp-date">Feb 2026 — Present</span>
+              <span class="exp-date">Feb 2026 — Jun 2026</span>
             </div>
-            <h3 class="exp-role">SDE-2</h3>
+            <h3 class="exp-role">Founding Engineer</h3>
             <ul class="exp-bullets">
-              <li>Architected the compliance automation module on <strong>Go / Gin</strong> with per-tenant PostgreSQL isolation, eliminating third-party integration dependencies</li>
-              <li>Designed an append-only evidence model and pluggable BatchCollector framework across <strong>9+ native sources</strong> — CSPM, WAF, DLP, ZTNA, VAPT, Endpoint, SAST/SCA, Logs, URL Filtering</li>
-              <li>Built a <strong>framework-agnostic control mapping layer</strong> — one automated run satisfies controls across SOC2, ISO 27001, HIPAA, and GDPR without duplicating logic</li>
-              <li>Designed interface-based abstractions for EventBus and DocumentStore, <strong>decoupling core logic from infrastructure</strong> and keeping the system cloud-agnostic and swap-ready</li>
+              <li><strong>AI-Native Engineering:</strong> Accelerated product delivery by integrating agent-driven development workflows and TDD methodologies. Orchestrated automated CI/CD pipelines and integrated Cloud MCP servers with Jira/Confluence to dynamically maintain engineering documentation and ticket states.</li>
+              <li><strong>Compliance Automation:</strong> Engineered an evidence-first compliance automation engine using a DAG-based control graph. Designed automated SQL evidence collectors as the absolute source of truth, enabling dynamic mapping across multiple frameworks (SOC 2, ISO 27001) while pioneering a seamless, consumer-grade user experience.</li>
+              <li><strong>Scalable EDR Telemetry:</strong> Architected a high-throughput telemetry pipeline (referencing Wazuh/Microsoft Defender architectures) to ingest and channel kernel-level events for active response. Overcame complex distributed systems challenges including Postgres data sanctity, Dead Letter Queue (DLQ) processing, and automated mTLS certificate renewals for expanding agent networks.</li>
+              <li><strong>Platform Infrastructure:</strong> Applied a first-principles approach to cross-functional product requirements, rapidly delivering critical business infrastructure including a secure payment routing and invoicing system via Zoho APIs.</li>
             </ul>
           </div>
 
           <div class="exp-item fade-in">
             <div class="exp-top">
               <div>
-                <span class="exp-company">Indian Civil Services Examination</span>
+                <span class="exp-company">UPSC Civil Services Examination</span>
                 <span class="exp-location">Mathematics Optional</span>
               </div>
               <span class="exp-date">Jan 2024 — Nov 2025</span>
             </div>
             <h3 class="exp-role">Deliberate Sabbatical</h3>
-            <p class="exp-note">Chose to compete for India's most selective examination with Mathematics as optional subject. Ranked in the <strong>top 2%</strong> of 800,000+ candidates, reaching Stage 2. Deep study of Linear Algebra, Analysis, and Numerical Methods. Rigor, it turns out, is a transferable skill.</p>
+            <p class="exp-note">Chose to compete for India's most selective examination with Mathematics as the optional subject. Cleared Civil Services Prelims — <strong>Top 1%</strong> of 800,000+ candidates. Deep study of Linear Algebra, Analysis, and Numerical Methods.</p>
           </div>
 
           <div class="exp-item fade-in">
@@ -105,29 +127,15 @@
               </div>
               <span class="exp-date">Jul 2021 — Dec 2023</span>
             </div>
-            <h3 class="exp-role">Software Engineer — Analyst → Associate</h3>
+            <h3 class="exp-role">Software Engineer (Associate)</h3>
             <ul class="exp-bullets">
-              <li>Built Spring Boot data-ingestion microservices handling <strong>50M+ records/day</strong> via MQ and Spark, with 80%+ test coverage and mTLS encryption</li>
-              <li>Co-led Gravity modernization — rebuilt data ingestion as an event-driven pipeline, delivering <strong>$500K in annual savings</strong></li>
-              <li>Owned JVM tuning for a 24-node Hazelcast cluster: analyzed <strong>G1GC logs</strong>, adjusted heap configuration per server capacity, led post-deployment monitoring during high-load cVA runs</li>
-              <li>Led <strong>Hazelcast 4.x &amp; Apache Camel 3.x</strong> upgrade across a tightly-coupled monolith, averting an 8-week compliance delay</li>
-              <li>Isolated data corruption across <strong>160M+ records</strong>, resolving a live production outage and averting regulatory impact</li>
-              <li>Fast-tracked to Associate (SDE-II) for autonomous ownership of critical microservices</li>
-            </ul>
-          </div>
-
-          <div class="exp-item fade-in">
-            <div class="exp-top">
-              <div>
-                <span class="exp-company">Google Summer of Code</span>
-                <span class="exp-location">INCF Belgian Node · Remote</span>
-              </div>
-              <span class="exp-date">May 2020 — Sep 2020</span>
-            </div>
-            <h3 class="exp-role">Student Developer</h3>
-            <ul class="exp-bullets">
-              <li>Built a cell-tracking module using the <strong>Viterbi Algorithm</strong> with ImageJ, reducing complexity from <strong>O(n³) to O(n²)</strong></li>
-              <li>Delivered the first production-ready iteration of the tracker</li>
+              <li><strong>Fast-tracked to Associate (SDE-2)</strong> for consistently exceeding expectations, independently driving modernization initiatives, and mentoring junior engineers.</li>
+              <li>Built and scaled Spring Boot data-ingestion microservices processing <strong>50M+ records/day</strong> using MQ and Spark with 80%+ automated test coverage and mTLS-secured communication.</li>
+              <li>Co-led modernization of the Gravity platform by decomposing a legacy monolith into an event-driven ingestion pipeline, delivering approximately <strong>$500K annual infrastructure savings</strong>.</li>
+              <li>Owned JVM performance tuning for a 24-node Hazelcast cluster, optimizing G1GC configuration and eliminating GC-induced latency during high-volume cVA risk calculations.</li>
+              <li>Optimized Drools rule evaluation using HashMap-based indexing and incremental loading, <strong>reducing rule execution latency by nearly 40%</strong>.</li>
+              <li>Led the <strong>Hazelcast 4.x &amp; Apache Camel 3.x</strong> upgrade across a tightly coupled monolith, preventing an estimated 8-week regulatory compliance delay.</li>
+              <li>Resolved production incidents involving 160M+ financial records, identifying data corruption root causes and restoring business-critical processing under strict regulatory timelines.</li>
             </ul>
           </div>
 
@@ -143,36 +151,29 @@
         <div class="project-list">
 
           <div class="project-item fade-in">
-            <a href="https://github.com/Raghavendrapara/social-distro" target="_blank" rel="noopener" class="project-name">AI-Powered Knowledge Hub ↗</a>
-            <span class="project-stack">Java 25 · Spring Boot · Kafka · pgvector · Redis</span>
+            <span class="project-name">AI Sales Intelligence Platform</span>
+            <span class="project-stack">Python · FastAPI · LangGraph · LangChain · PostgreSQL · Docker</span>
             <ul class="project-bullets">
-              <li>Distributed indexing pipeline using <strong>Virtual Threads</strong> and <strong>Kafka fan-out</strong> for parallel LLM embedding generation</li>
-              <li>Vector similarity search via <strong>pgvector HNSW</strong> indexes and Redis caching for low-latency RAG queries</li>
+              <li>Built an agentic lead intelligence platform automating discovery, enrichment, and qualification, processing <strong>10k+ businesses/day</strong> using autonomous LangGraph workflows.</li>
+              <li>Integrated asynchronous data pipelines and external business APIs, reducing end-to-end lead enrichment latency by 70%.</li>
             </ul>
           </div>
 
           <div class="project-item fade-in">
-            <a href="https://github.com/Raghavendrapara/diffu-syn" target="_blank" rel="noopener" class="project-name">Diffu-Syn — Synthetic Data Generator ↗</a>
-            <span class="project-stack">PyTorch · FastAPI · Celery · Redis · Polars</span>
+            <span class="project-name">Enterprise Knowledge Platform</span>
+            <span class="project-stack">Java 25 · Spring Boot · LangChain4j · Kafka · Redis · pgvector</span>
             <ul class="project-bullets">
-              <li>Event-driven training platform with async job orchestration and automatic retry logic</li>
-              <li><strong>DDPM-based diffusion model</strong> for tabular data; Polars streaming for larger-than-RAM datasets</li>
+              <li>Engineered a distributed ingestion pipeline indexing <strong>100k+ documents</strong> using Virtual Threads, Kafka fan-out, and LangChain4j embeddings.</li>
+              <li>Implemented hybrid semantic retrieval with <strong>pgvector (HNSW)</strong> and Redis, achieving sub-100 ms contextual search latency for complex RAG queries.</li>
             </ul>
           </div>
 
           <div class="project-item fade-in">
-            <a href="https://github.com/OpenBB-finance/OpenBB/pulls?q=is%3Apr+is%3Aclosed+author%3ARaghavendrapara" target="_blank" rel="noopener" class="project-name">OpenBB Terminal (OSS, 37k★) ↗</a>
-            <span class="project-stack">Python · Open Source</span>
+            <span class="project-name">Synthetic Data Platform</span>
+            <span class="project-stack">PyTorch · FastAPI · Celery · Redis</span>
             <ul class="project-bullets">
-              <li>Merged 2 PRs fixing data integrity issues in US rates export and insider trading display</li>
-            </ul>
-          </div>
-
-          <div class="project-item fade-in">
-            <a href="https://raghavendrapara.github.io/CellTracking/" target="_blank" rel="noopener" class="project-name">Cell Tracking — GSoC 2020 ↗</a>
-            <span class="project-stack">Java · ImageJ · Viterbi Algorithm · INCF</span>
-            <ul class="project-bullets">
-              <li>Cell-tracking via Viterbi Algorithm; reduced time complexity from <strong>O(n³) to O(n²)</strong></li>
+              <li>Built a distributed AI training platform supporting <strong>1,000+ concurrent training jobs</strong> through asynchronous task orchestration.</li>
+              <li>Developed diffusion-based synthetic data generation for datasets containing <strong>10M+ rows</strong> using memory-efficient streaming pipelines.</li>
             </ul>
           </div>
 
@@ -188,23 +189,27 @@
         <div class="skills-table">
           <div class="skill-row fade-in">
             <span class="skill-cat">Languages</span>
-            <span class="skill-vals">Java, Go, Python, SQL, TypeScript</span>
+            <span class="skill-vals">Java, Python, Golang, SQL</span>
           </div>
           <div class="skill-row fade-in">
             <span class="skill-cat">Frameworks</span>
-            <span class="skill-vals">Spring Boot, Gin, FastAPI, React</span>
+            <span class="skill-vals">Spring Boot, FastAPI, LangChain, LangChain4j, LangGraph</span>
           </div>
           <div class="skill-row fade-in">
-            <span class="skill-cat">Infrastructure</span>
-            <span class="skill-vals">Kafka, Redis, Elasticsearch, Hazelcast, Spark, Docker, AWS, GCP, Terraform</span>
+            <span class="skill-cat">AI & Retrieval</span>
+            <span class="skill-vals">RAG, MCP, Vector Search, pgvector, Ollama</span>
           </div>
           <div class="skill-row fade-in">
-            <span class="skill-cat">AI / ML</span>
-            <span class="skill-vals">LLM Integration, RAG, pgvector, HNSW, PyTorch, Diffusion Models</span>
+            <span class="skill-cat">Systems</span>
+            <span class="skill-vals">Kafka, Redis, Elasticsearch, Apache Spark, Hazelcast, Apache Camel</span>
           </div>
           <div class="skill-row fade-in">
-            <span class="skill-cat">Practices</span>
-            <span class="skill-vals">Distributed Systems, Concurrency, gRPC, REST, SonarQube, JUnit, Mockito</span>
+            <span class="skill-cat">Cloud</span>
+            <span class="skill-vals">AWS, GCP, Docker, Kubernetes, Terraform, PostgreSQL</span>
+          </div>
+          <div class="skill-row fade-in">
+            <span class="skill-cat">Engineering</span>
+            <span class="skill-vals">REST, gRPC, Microservices, Concurrency, JVM Performance, CI/CD</span>
           </div>
         </div>
       </div>
@@ -228,16 +233,20 @@
 
           <div class="achievements-block fade-in">
             <div class="achievement">
-              <span class="ach-title">Deutsche Bank Recognition Award 2022</span>
-              <span class="ach-desc">Cash reward for delivering critical modules ahead of deadline</span>
+              <span class="ach-title">Certifications</span>
+              <span class="ach-desc">MarcoBehler (JetBrains) Spring Professional, deeplearning.ai RAG, DeepLearning.AI Agentic AI</span>
+            </div>
+            <div class="achievement">
+              <span class="ach-title">Academic Excellence</span>
+              <span class="ach-desc">Cleared Indian Civil Services 2025 Prelims – Top 1% of 800k+ candidates</span>
+            </div>
+            <div class="achievement">
+              <span class="ach-title">Deutsche Bank Recognition Award (2022)</span>
+              <span class="ach-desc">Rewarded for exceeding delivery expectations and technical merit</span>
             </div>
             <div class="achievement">
               <span class="ach-title">Indian Army SSB Selection (2017)</span>
-              <span class="ach-desc">Cleared the 5-day Officers Selection Board evaluation for Army Engineers</span>
-            </div>
-            <div class="achievement">
-              <span class="ach-title">Certifications</span>
-              <span class="ach-desc">Spring Professional (JetBrains), deeplearning.ai RAG, Educative AWS Bedrock</span>
+              <span class="ach-desc">Cleared the 5-day Officers Selection Board evaluation of IQ, EQ, and leadership</span>
             </div>
           </div>
         </div>
@@ -249,7 +258,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>© 2025 Raghavendra Singh Chauhan</span>
+      <span>© 2026 Raghavendra Singh Chauhan</span>
       <div class="footer-links">
         <a href="mailto:raghavendra0360@gmail.com">Email</a>
         <a href="https://github.com/Raghavendrapara" target="_blank" rel="noopener">GitHub</a>
@@ -259,6 +268,19 @@
   </footer>
 
   <script>
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('themeToggle');
+    themeToggleBtn.addEventListener('click', () => {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
     // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -267,7 +289,7 @@
     }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Nav border on scroll
+    // Nav blur and border on scroll
     const nav = document.getElementById('siteNav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 32);
