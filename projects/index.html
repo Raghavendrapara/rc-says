@@ -1,0 +1,16 @@
+---
+layout: base
+title: Projects
+description: "Case studies of projects I've built, covering backend, platform and AI engineering: architecture, design decisions and trade-offs."
+---
+<section class="section writing-page">
+  <div class="container">
+    <span class="section-label">Projects</span>
+    <h1 class="writing-heading">Case studies</h1>
+    <p class="writing-intro">How I built each project: architecture, design decisions and trade-offs, and what's still to do. More writing is on the <a href="{{ '/writing/' | relative_url }}">writing page</a>.</p>
+    {% assign projects = site.posts | where: "type", "project" %}
+    <div class="entry-list">
+      {% for post in projects %}{% include entry-card.html post=post %}{% endfor %}
+    </div>
+  </div>
+</section>

@@ -135,6 +135,7 @@ layout: base
               <li>Engineered a distributed ingestion pipeline indexing <strong>100k+ documents</strong> using Virtual Threads, Kafka fan-out, and LangChain4j embeddings.</li>
               <li>Implemented hybrid semantic retrieval with <strong>pgvector (HNSW)</strong> and Redis, achieving sub-100 ms contextual search latency for complex RAG queries.</li>
             </ul>
+            <div class="project-links"><a href="{{ '/projects/social-distro/' | relative_url }}">Case study →</a><a href="https://github.com/Raghavendrapara/social-distro" target="_blank" rel="noopener">Code ↗</a></div>
           </div>
 
           <div class="project-item fade-in">
@@ -144,9 +145,31 @@ layout: base
               <li>Built a distributed AI training platform supporting <strong>1,000+ concurrent training jobs</strong> through asynchronous task orchestration.</li>
               <li>Developed diffusion-based synthetic data generation for datasets containing <strong>10M+ rows</strong> using memory-efficient streaming pipelines.</li>
             </ul>
+            <div class="project-links"><a href="{{ '/projects/diffu-syn/' | relative_url }}">Case study →</a><a href="https://github.com/Raghavendrapara/diffu-syn" target="_blank" rel="noopener">Code ↗</a></div>
           </div>
 
+
+          <div class="project-item fade-in">
+            <span class="project-name">dots-agent: LLM Video Pipeline</span>
+            <span class="project-stack">Python · LangGraph · Claude &amp; DeepSeek · Telegram · ElevenLabs · Remotion</span>
+            <ul class="project-bullets">
+              <li>Built a 12-node LangGraph pipeline that turns news or notes into a researched, scripted and rendered explainer video, with <strong>two human approval gates</strong> in Telegram backed by a SQLite checkpointer for retry and rewind.</li>
+              <li>Kept facts separate from generated prose: an adversarial critic on a different model family, a claim-review ledger, and chart numbers sourced only from FRED/World Bank, plus schema-validated outputs with a repair loop, per-run cost caps and 28 offline tests.</li>
+            </ul>
+            <div class="project-links"><a href="{{ '/projects/dots-agent/' | relative_url }}">Case study →</a></div>
+          </div>
+
+          <div class="project-item fade-in">
+            <span class="project-name">Contest Maker 150</span>
+            <span class="project-stack">Go · Gin · GORM · PostgreSQL · OpenTelemetry · React · Docker</span>
+            <ul class="project-bullets">
+              <li>Built a Go API that assembles timed practice contests from a user's unsolved problems, with JWT access/refresh tokens, layered repository/service/handler design and concurrent per-difficulty fetches.</li>
+              <li>Containerised as a six-service Compose stack with a distroless backend image, structured logging, graceful shutdown and OpenTelemetry tracing.</li>
+            </ul>
+            <div class="project-links"><a href="{{ '/projects/contest-maker-150/' | relative_url }}">Case study →</a><a href="https://github.com/Raghavendrapara/contest-maker-150" target="_blank" rel="noopener">Code ↗</a></div>
+          </div>
         </div>
+        <a class="entry-all" href="{{ '/projects/' | relative_url }}">All case studies →</a>
       </div>
     </section>
 

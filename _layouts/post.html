@@ -3,7 +3,7 @@ layout: base
 ---
 <article class="entry">
   <div class="container">
-    <a class="entry-back" href="{{ '/writing/' | relative_url }}">← All writing</a>
+    {% if page.type == 'project' %}<a class="entry-back" href="{{ '/projects/' | relative_url }}">← All case studies</a>{% else %}<a class="entry-back" href="{{ '/writing/' | relative_url }}">← All writing</a>{% endif %}
     <header class="entry-header">
       <div class="entry-meta">{% include entry-meta.html post=page reading_time=true %}</div>
       <h1 class="entry-heading">{{ page.title }}</h1>

@@ -795,3 +795,8 @@ strong {
 .dg-arrowhead { fill: var(--muted); }
 .dg-arrowhead-accent { fill: var(--accent); }
 .entry-type--project { border-color: var(--accent); color: var(--accent); background: var(--glow); }
+
+/* Links under each project on the homepage */
+.project-links { display: flex; gap: 20px; margin-top: 14px; padding-left: 0; font-size: 13.5px; }
+.project-links a { color: var(--accent); }
+.project-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
