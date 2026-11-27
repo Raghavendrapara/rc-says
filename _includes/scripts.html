@@ -1,0 +1,19 @@
+<script>
+  // Theme toggle
+  document.getElementById('themeToggle').addEventListener('click', function () {
+    var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if (isLight) document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', 'light');
+    try { localStorage.setItem('theme', isLight ? 'dark' : 'light'); } catch (e) {}
+  });
+
+  // Fade-in on scroll
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
+
+  // Nav blur and border on scroll
+  var nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function () { nav.classList.toggle('scrolled', window.scrollY > 32); }, { passive: true });
+</script>

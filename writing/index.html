@@ -1,0 +1,38 @@
+---
+layout: base
+title: Writing
+description: Articles, research notes and work logs on backend engineering, distributed systems and AI systems.
+---
+<section class="section writing-page">
+  <div class="container">
+    <span class="section-label">Writing</span>
+    <h1 class="writing-heading">Articles, research &amp; work logs</h1>
+    <p class="writing-intro">Notes from building backend, distributed and AI systems. Subscribe via <a href="{{ '/feed.xml' | relative_url }}">RSS</a>.</p>
+
+    {% if site.posts.size > 0 %}
+    <div class="entry-filters" role="tablist">
+      <button class="is-active" data-filter="all">All <span>{{ site.posts.size }}</span></button>
+      {% for t in site.entry_types %}
+        {% assign n = site.posts | where: "type", t[0] | size %}
+        {% if n > 0 %}<button data-filter="{{ t[0] }}">{{ t[1] }} <span>{{ n }}</span></button>{% endif %}
+      {% endfor %}
+    </div>
+    <div class="entry-list">
+      {% for post in site.posts %}{% include entry-card.html post=post %}{% endfor %}
+    </div>
+    {% else %}
+    <p class="entry-empty">The first entries are on their way.</p>
+    {% endif %}
+  </div>
+</section>
+<script>
+  document.querySelectorAll('.entry-filters button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.getAttribute('data-filter');
+      document.querySelectorAll('.entry-filters button').forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+      document.querySelectorAll('.entry-list .entry-card').forEach(function (c) {
+        c.style.display = (f === 'all' || c.getAttribute('data-type') === f) ? '' : 'none';
+      });
+    });
+  });
+</script>

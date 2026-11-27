@@ -1,0 +1,8 @@
+<a class="entry-card fade-in" href="{{ include.post.url | relative_url }}" data-type="{{ include.post.type | default: 'article' }}">
+  <div class="entry-meta">{% include entry-meta.html post=include.post %}</div>
+  <h3 class="entry-title">{{ include.post.title }}</h3>
+  {% if include.post.description %}<p class="entry-desc">{{ include.post.description }}</p>{% endif %}
+  {% if include.post.tags.size > 0 %}
+  <div class="entry-tags">{% for tag in include.post.tags %}<span>{{ tag }}</span>{% endfor %}</div>
+  {% endif %}
+</a>
