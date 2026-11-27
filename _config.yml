@@ -15,6 +15,7 @@ resume_pdf: /Raghavendra_SDE_2026.pdf
 
 # The three kinds of entry. Set `type:` in each post's front matter to one of these keys.
 entry_types:
+  project: Case study
   article: Article
   research: Research
   log: Work log
