@@ -1,78 +1,51 @@
-# Raghavendra Singh Chauhan - Personal Portfolio
+# Raghavendra Singh Chauhan — portfolio & writing
 
-A modern, interactive portfolio website showcasing my professional experience as a Software Engineer. Features stunning visual effects including particle constellations, 3D card interactions, and smooth animations.
+Live: **https://raghavendrapara.github.io/rc-says/**
 
-> 🤖 **Powered by [Claude](https://claude.ai)** - Built with AI-assisted development
+A single-page portfolio plus a writing section for articles, research notes and work logs.
+GitHub Pages builds it with Jekyll on every push to `main`, so there is nothing to install or deploy.
 
-## 🌐 Live Site
+## Publishing an entry
 
-**[https://Raghavendrapara.github.io/rc-says](https://Raghavendrapara.github.io/rc-says)**
+1. Copy `_templates/entry.md` to `_posts/YYYY-MM-DD-short-slug.md` (the date is the publish date).
+2. Fill in the front matter, then write in Markdown.
+3. Commit and push to `main`. The site updates in about a minute. Check the **Actions** tab
+   ("pages build and deployment") if it doesn't.
 
-## ✨ Features
+Entry types, set with `type:` in front matter:
 
-### Visual Effects
-- **Particle Constellation Background** - Interactive particles that connect with lines and react to cursor movement
-- **3D Tilt Cards** - Cards rotate in 3D space based on mouse position
-- **Cursor Glow** - Ambient gradient that follows your cursor
-- **Magnetic Buttons** - Buttons that attract toward the cursor
-- **Diffusion Text Reveal** - Blur-to-sharp animation for header text
-- **Scroll Reveal** - Sections fade in beautifully as you scroll
-- **Animated Gradient Header** - Flowing color gradient with mesh overlays
+| type | label | use it for |
+|---|---|---|
+| `article` | Article | essays, opinions, explainers |
+| `research` | Research | deep-dives and experiments; supports `abstract`, `repo`, `demo`, `paper` |
+| `log` | Work log | short build notes and progress updates |
 
-### Design
-- **Light/Dark Mode** - Toggle between themes with particle color adaptation
-- **Responsive Layout** - Optimized for desktop and mobile
-- **Glassmorphism** - Frosted glass effect with backdrop blur
-- **Modern Typography** - Inter font with carefully tuned weights
+Extras: `math: true` turns on LaTeX (KaTeX; write `$$...$$` on its own line for display maths, inside a sentence for inline), `canonical_url` credits the original source when
+you cross-post, and `image` sets the link-preview image. Put images and PDFs under `assets/`.
 
-### Content
-- Professional experience timeline
-- Project showcase with tech stacks
-- Skills organized by category
-- Education and achievements
+Work in progress goes in `_drafts/`, which is never published.
+`_drafts/example-research-entry.md` shows every element the layout supports.
 
-## 🛠️ Tech Stack
+## What's where
 
-| Technology | Usage |
-|------------|-------|
-| HTML5 | Semantic structure |
-| CSS3 | Custom properties, Grid, Flexbox, Animations |
-| JavaScript | Canvas API, Intersection Observer, Event handling |
-| GitHub Pages | Hosting |
+| Path | What it is |
+|---|---|
+| `index.html` | The portfolio page (experience, projects, skills, education) |
+| `writing/index.html` | The writing list, filterable by type |
+| `_posts/` | Published entries |
+| `_layouts/`, `_includes/` | Shared page shell, nav, footer, entry layout |
+| `style.css` | All styles; theme colours are CSS variables at the top |
+| `_config.yml` | Site settings: name, links, résumé file, entry types |
 
-## 📖 Local Setup
+The RSS feed is at `/rc-says/feed.xml`. Cross-posting tools such as dev.to's RSS import and
+Substack's importer can read it.
+
+## Previewing locally (optional)
 
 ```bash
-git clone https://github.com/Raghavendrapara/rc-says.git
-cd rc-says
-# Open index.html in your browser
+gem install jekyll jekyll-feed jekyll-seo-tag
+jekyll serve --drafts --baseurl /rc-says
+# open http://localhost:4000/rc-says/
 ```
 
-## 🎨 Customization
-
-### Colors
-Edit CSS custom properties in `style.css`:
-```css
-:root {
-    --accent: #6366f1;      /* Primary accent */
-    --secondary: #8b5cf6;   /* Secondary accent */
-    --tertiary: #06b6d4;    /* Tertiary accent */
-}
-```
-
-### Particles
-Adjust particle behavior in `index.html`:
-```javascript
-const numberOfParticles = 120;  // Particle count
-mouse.radius = 150;             // Interaction radius
-```
-
-## 📱 Performance
-
-- Animations disabled on mobile for smooth scrolling
-- Respects `prefers-reduced-motion` accessibility setting
-- Optimized particle count based on screen size
-
-## 📜 License
-
-Code is open for public use. Personal content and resume details are proprietary.
+Code is open for reuse. Personal content and résumé details are not.

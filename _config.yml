@@ -1,0 +1,49 @@
+# Site settings. GitHub Pages builds this with Jekyll on every push to main.
+title: Raghavendra Singh Chauhan
+tagline: Software Engineer — Backend & AI Systems
+description: Software engineer specializing in backend engineering, distributed systems, and AI systems. Articles, research notes and work logs.
+url: https://raghavendrapara.github.io
+baseurl: /rc-says
+lang: en
+
+author:
+  name: Raghavendra Singh Chauhan
+  email: raghavendra0360@gmail.com
+github_url: https://github.com/Raghavendrapara
+linkedin_url: https://in.linkedin.com/in/raghavendra-singh-chauhan-474a7b155
+resume_pdf: /Raghavendra_SDE_2026.pdf
+
+# The three kinds of entry. Set `type:` in each post's front matter to one of these keys.
+entry_types:
+  article: Article
+  research: Research
+  log: Work log
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+permalink: /writing/:year/:title/
+timezone: Asia/Kolkata
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      type: article
+
+exclude:
+  - README.md
+  - cv_temp.txt
+  - _templates
