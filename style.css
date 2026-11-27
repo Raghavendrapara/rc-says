@@ -807,3 +807,6 @@ strong {
 .elsewhere-card .section-label { margin-bottom: 10px; }
 .elsewhere-title { display: block; font-size: 18px; font-weight: 600; margin-bottom: 4px; }
 .elsewhere-desc { display: block; color: var(--muted); font-size: 14px; }
+.elsewhere-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+.elsewhere-grid .elsewhere-card { margin-bottom: 0; }
+@media (max-width: 660px) { .elsewhere-grid { grid-template-columns: 1fr; } }

@@ -12,9 +12,16 @@ author:
 github_url: https://github.com/Raghavendrapara
 linkedin_url: https://in.linkedin.com/in/raghavendra-singh-chauhan-474a7b155
 resume_pdf: /Raghavendra_SDE_2026.pdf
+# Substack publications. Change a url here and every link on the site follows.
+substack:
+  - name: Raghavendra Singh Chauhan
+    url: https://stoic996.substack.com
+    blurb: Essays on life, the world and business, from an engineer with an unusual path.
+  - name: Alpha Engineering
+    url: https://alphaengineering.substack.com
+    blurb: Lessons from building backend, distributed and AI systems.
 newsletter:
   url: https://stoic996.substack.com
-  topic: Life lessons and observations
 
 # The three kinds of entry. Set `type:` in each post's front matter to one of these keys.
 entry_types:
