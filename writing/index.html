@@ -9,6 +9,12 @@ description: Articles, research notes and work logs on backend engineering, dist
     <h1 class="writing-heading">Articles, research &amp; work logs</h1>
     <p class="writing-intro">Notes from building backend, distributed and AI systems. Subscribe via <a href="{{ '/feed.xml' | relative_url }}">RSS</a>.</p>
 
+    <a class="elsewhere-card" href="{{ site.newsletter.url }}" target="_blank" rel="noopener">
+      <span class="section-label">Newsletter on Substack</span>
+      <span class="elsewhere-title">{{ site.newsletter.topic }}</span>
+      <span class="elsewhere-desc">Personal essays on what I'm learning along the way. Read and subscribe on Substack ↗</span>
+    </a>
+
     {% if site.posts.size > 0 %}
     <div class="entry-filters" role="tablist">
       <button class="is-active" data-filter="all">All <span>{{ site.posts.size }}</span></button>

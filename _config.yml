@@ -12,6 +12,9 @@ author:
 github_url: https://github.com/Raghavendrapara
 linkedin_url: https://in.linkedin.com/in/raghavendra-singh-chauhan-474a7b155
 resume_pdf: /Raghavendra_SDE_2026.pdf
+newsletter:
+  url: https://stoic996.substack.com
+  topic: Life lessons and observations
 
 # The three kinds of entry. Set `type:` in each post's front matter to one of these keys.
 entry_types:
