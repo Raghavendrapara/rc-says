@@ -1,12 +1,12 @@
 {% assign home = '/' | relative_url %}
 <nav class="site-nav" id="siteNav">
-  <a href="{{ home }}" class="nav-wordmark">RC</a>
+  <a href="{{ home }}" class="nav-wordmark">RSC</a>
   <div class="nav-right">
     <div class="nav-links">
       <a href="{{ home }}#experience" class="nav-hide-sm">Experience</a>
       <a href="{{ home }}#projects" class="nav-hide-sm">Projects</a>
       <a href="{{ home }}#skills" class="nav-hide-sm">Skills</a>
-      {% if site.posts.size > 0 %}<a href="{{ '/writing/' | relative_url }}">Writing</a>{% endif %}
+      <a href="{{ '/writing/' | relative_url }}">Writing</a>
       <a href="{{ site.resume_pdf | relative_url }}" target="_blank" rel="noopener" class="nav-resume">Resume ↗</a>
     </div>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
