@@ -1,8 +1,16 @@
-<a class="entry-card fade-in" href="{{ include.post.url | relative_url }}" data-type="{{ include.post.type | default: 'article' }}">
-  <div class="entry-meta">{% include entry-meta.html post=include.post %}</div>
-  <h3 class="entry-title">{{ include.post.title }}</h3>
-  {% if include.post.description %}<p class="entry-desc">{{ include.post.description }}</p>{% endif %}
-  {% if include.post.tags.size > 0 %}
-  <div class="entry-tags">{% for tag in include.post.tags %}<span>{{ tag }}</span>{% endfor %}</div>
-  {% endif %}
+{%- comment -%} One row in a writing list. Titles written as "Name: what it is" are split into a name and a subtitle. {%- endcomment -%}
+{%- assign p = include.post -%}
+{%- assign t = p.type | default: 'article' -%}
+{%- assign tparts = p.title | split: ': ' -%}
+{%- assign name = tparts[0] -%}
+{%- assign sub = p.title | remove_first: name | remove_first: ': ' -%}
+{%- assign sub_rest = sub | slice: 1, 400 -%}
+{%- assign sub = sub | slice: 0 | upcase | append: sub_rest -%}
+<a class="row" href="{{ p.url | relative_url }}" data-type="{{ t }}">
+  <time class="row-date" datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: '%b %Y' }}</time>
+  <span class="row-main">
+    <span class="row-title">{{ name }}</span>
+    {% if sub != '' %}<span class="row-sub">{{ sub }}</span>{% elsif p.description %}<span class="row-sub">{{ p.description }}</span>{% endif %}
+  </span>
+  <span class="row-kind">{{ site.entry_types[t] | default: t }}</span>
 </a>

@@ -4,10 +4,13 @@
 
 title: "Your title"
 description: "One sentence. Shown on cards, in search results and in link previews."
-type: article          # article | research | log
+type: article          # project | article | research | log
+# Titles written as "Name: what it is" show the name large and the rest as a subtitle.
 tags: [java, kafka]
 
 # Optional
+# stack: "Java, Spring Boot, Kafka"   # shown as "Built with" on case studies and the projects page
+# order: 5                          # position on the case-studies page (1 = first)
 # image: /assets/img/cover.png   # link-preview image (1200x630 works best)
 # math: true                     # enables LaTeX: write $$ ... $$ (own line = display, inside a sentence = inline)
 # canonical_url: https://...     # set if this was first published elsewhere (e.g. Substack)

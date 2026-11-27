@@ -1,40 +1,88 @@
 ---
 layout: base
 ---
-<article class="entry">
-  <div class="container">
-    {% if page.type == 'project' %}<a class="entry-back" href="{{ '/projects/' | relative_url }}">← All case studies</a>{% else %}<a class="entry-back" href="{{ '/writing/' | relative_url }}">← All writing</a>{% endif %}
-    <header class="entry-header">
-      <div class="entry-meta">{% include entry-meta.html post=page reading_time=true %}</div>
-      <h1 class="entry-heading">{{ page.title }}</h1>
-      {% if page.description %}<p class="entry-lede">{{ page.description }}</p>{% endif %}
-      {% if page.repo or page.demo or page.paper %}
-      <div class="entry-links">
-        {% if page.repo %}<a href="{{ page.repo }}" target="_blank" rel="noopener">Code ↗</a>{% endif %}
-        {% if page.demo %}<a href="{{ page.demo }}" target="_blank" rel="noopener">Demo ↗</a>{% endif %}
-        {% if page.paper %}<a href="{{ page.paper | relative_url }}" target="_blank" rel="noopener">PDF ↗</a>{% endif %}
-      </div>
-      {% endif %}
-    </header>
+{%- assign is_project = false -%}
+{%- if page.type == 'project' -%}{%- assign is_project = true -%}{%- endif -%}
+{%- assign tparts = page.title | split: ': ' -%}
+{%- assign name = tparts[0] -%}
+{%- assign sub = page.title | remove_first: name | remove_first: ': ' -%}
+{%- assign sub_rest = sub | slice: 1, 400 -%}
+{%- assign sub = sub | slice: 0 | upcase | append: sub_rest -%}
+{%- assign minutes = content | number_of_words | divided_by: 230 | plus: 1 -%}
+{%- assign t = page.type | default: 'article' -%}
+<article class="doc">
+  <header class="doc-head">
+    {% if is_project %}<a class="doc-back" href="{{ '/projects/' | relative_url }}">← Case studies</a>{% else %}<a class="doc-back" href="{{ '/writing/' | relative_url }}">← Writing</a>{% endif %}
+    <h1 class="doc-title">{{ name }}</h1>
+    {% if sub != '' %}<p class="doc-sub">{{ sub }}</p>{% endif %}
+    {% if page.abstract %}<div class="doc-lede">{{ page.abstract | markdownify }}</div>{% elsif page.description %}<p class="doc-lede">{{ page.description }}</p>{% endif %}
 
-    {% if page.abstract %}
-    <aside class="entry-abstract">
-      <span class="section-label">Abstract</span>
-      {{ page.abstract | markdownify }}
-    </aside>
-    {% endif %}
+    <dl class="doc-facts">
+      <div><dt>Type</dt><dd>{{ site.entry_types[t] | default: t }}</dd></div>
+      {% if page.stack %}<div class="doc-facts-wide"><dt>Built with</dt><dd>{{ page.stack }}</dd></div>{% elsif page.tags.size > 0 %}<div class="doc-facts-wide"><dt>Topics</dt><dd>{{ page.tags | join: ', ' }}</dd></div>{% endif %}
+      <div><dt>Published</dt><dd><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %b %Y' }}</time></dd></div>
+      <div><dt>Reading time</dt><dd>{{ minutes }} min</dd></div>
+    </dl>
 
-    <div class="prose">
-      {{ content }}
+    {% if page.repo or page.demo or page.paper or is_project %}
+    <div class="doc-actions">
+      {% if page.repo %}<a class="btn btn-primary" href="{{ page.repo }}" target="_blank" rel="noopener">View code on GitHub <span aria-hidden="true">↗</span></a>
+      {% elsif is_project %}<p class="doc-private">The code is private. I'm happy to walk through it in an interview.</p>{% endif %}
+      {% if page.demo %}<a class="btn btn-secondary" href="{{ page.demo }}" target="_blank" rel="noopener">Open the demo <span aria-hidden="true">↗</span></a>{% endif %}
+      {% if page.paper %}<a class="btn btn-secondary" href="{{ page.paper | relative_url }}" target="_blank" rel="noopener">Read the PDF <span aria-hidden="true">↗</span></a>{% endif %}
     </div>
-
-    {% if page.canonical_url %}
-    <p class="entry-origin">Originally published at <a href="{{ page.canonical_url }}">{{ page.canonical_url | remove: 'https://' | remove: 'http://' | split: '/' | first }}</a>.</p>
     {% endif %}
+  </header>
 
-    <nav class="entry-pager">
-      {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><span>← Older</span>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
-      {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}"><span>Newer →</span>{{ page.next.title }}</a>{% endif %}
+  <div class="doc-grid">
+    <nav class="doc-toc" aria-label="On this page" hidden>
+      <p class="doc-toc-title">On this page</p>
+      <ol id="docToc"></ol>
     </nav>
+    <div class="prose" id="docBody">
+      {{ content }}
+      {% if page.canonical_url %}
+      <p class="doc-origin">First published at <a href="{{ page.canonical_url }}">{{ page.canonical_url | remove: 'https://' | remove: 'http://' | split: '/' | first }}</a>.</p>
+      {% endif %}
+    </div>
   </div>
+
+  <nav class="doc-pager" aria-label="More">
+    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><span>Previous</span>{{ page.previous.title | split: ': ' | first }}</a>{% else %}<span></span>{% endif %}
+    {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}"><span>Next</span>{{ page.next.title | split: ': ' | first }}</a>{% endif %}
+  </nav>
 </article>
+
+<script>
+  // Build "On this page" from the entry's h2s and highlight the section being read.
+  (function () {
+    var body = document.getElementById('docBody');
+    var list = document.getElementById('docToc');
+    var heads = body ? body.querySelectorAll('h2') : [];
+    if (heads.length < 3) return;
+    var links = [];
+    heads.forEach(function (h, i) {
+      if (!h.id) h.id = 'section-' + (i + 1);
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      li.appendChild(a);
+      list.appendChild(li);
+      links.push(a);
+    });
+    list.parentElement.hidden = false;
+    if (!('IntersectionObserver' in window)) return;
+    var current = null;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var a = list.querySelector('a[href="#' + e.target.id + '"]');
+          if (current) current.removeAttribute('aria-current');
+          if (a) { a.setAttribute('aria-current', 'true'); current = a; }
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    heads.forEach(function (h) { io.observe(h); });
+  })();
+</script>

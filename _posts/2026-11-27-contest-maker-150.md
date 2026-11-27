@@ -3,6 +3,8 @@ permalink: /projects/contest-maker-150/
 title: "Contest Maker 150: a Go API that builds timed practice contests from the NeetCode 150"
 description: "A Go and Postgres service that picks unsolved problems by difficulty, runs a timed contest per user, and ships with tracing and metrics in Docker Compose."
 type: project
+order: 4
+stack: "Go, Gin, GORM, PostgreSQL, OpenTelemetry, React, Docker"
 tags: [go, gin, postgresql, gorm, opentelemetry, docker]
 repo: https://github.com/Raghavendrapara/contest-maker-150
 abstract: >

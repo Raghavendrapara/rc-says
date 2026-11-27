@@ -3,6 +3,8 @@ permalink: /projects/social-distro/
 title: "Social-Distro (DataHub): an async RAG indexing and query backend in Spring Boot"
 description: "A Spring Boot service that indexes per-user text collections through a two-stage Kafka fan-out into pgvector and answers questions with RAG."
 type: project
+order: 2
+stack: "Java 25, Spring Boot, Kafka, PostgreSQL with pgvector, Hugging Face TEI, Docker Compose"
 tags: [java, spring-boot, kafka, pgvector, rag, docker]
 repo: https://github.com/Raghavendrapara/social-distro
 abstract: >

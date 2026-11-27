@@ -1,47 +1,47 @@
 ---
 layout: base
 title: Writing
-description: Articles, research notes and work logs on backend engineering, distributed systems and AI systems.
+description: Case studies, articles, research notes and work logs on backend, distributed and AI systems.
 ---
-<section class="section writing-page">
-  <div class="container">
-    <span class="section-label">Writing</span>
-    <h1 class="writing-heading">Articles, research &amp; work logs</h1>
-    <p class="writing-intro">Notes from building backend, distributed and AI systems. Subscribe via <a href="{{ '/feed.xml' | relative_url }}">RSS</a>.</p>
+<section class="index">
+  <header class="index-head">
+    <h1 class="index-title">Writing</h1>
+    <p class="index-intro">Case studies and notes from building backend, distributed and AI systems. Longer essays live on Substack. Follow along with <a href="{{ '/feed.xml' | relative_url }}">RSS</a>.</p>
+  </header>
 
-    <div class="elsewhere-grid">
-      {% for pub in site.substack %}
-      <a class="elsewhere-card" href="{{ pub.url }}" target="_blank" rel="noopener">
-        <span class="section-label">On Substack</span>
-        <span class="elsewhere-title">{{ pub.name }}</span>
-        <span class="elsewhere-desc">{{ pub.blurb }} Read on Substack ↗</span>
-      </a>
-      {% endfor %}
-    </div>
-
-    {% if site.posts.size > 0 %}
-    <div class="entry-filters" role="tablist">
-      <button class="is-active" data-filter="all">All <span>{{ site.posts.size }}</span></button>
-      {% for t in site.entry_types %}
-        {% assign n = site.posts | where: "type", t[0] | size %}
-        {% if n > 0 %}<button data-filter="{{ t[0] }}">{{ t[1] }} <span>{{ n }}</span></button>{% endif %}
-      {% endfor %}
-    </div>
-    <div class="entry-list">
-      {% for post in site.posts %}{% include entry-card.html post=post %}{% endfor %}
-    </div>
-    {% else %}
-    <p class="entry-empty">The first entries are on their way.</p>
-    {% endif %}
+  {% if site.posts.size > 0 %}
+  {%- assign present = '' -%}
+  {%- for t in site.entry_types -%}{%- assign n = site.posts | where: "type", t[0] | size -%}{%- if n > 0 -%}{%- assign present = present | append: t[0] | append: ',' -%}{%- endif -%}{%- endfor -%}
+  {%- assign kinds = present | split: ',' -%}
+  {% if kinds.size > 1 %}
+  <div class="tabs" role="toolbar" aria-label="Filter by type">
+    <button type="button" aria-pressed="true" data-filter="all">All</button>
+    {% for k in kinds %}<button type="button" aria-pressed="false" data-filter="{{ k }}">{{ site.entry_types[k] }}</button>{% endfor %}
   </div>
+  {% endif %}
+  <div class="rows">
+    {% for post in site.posts %}{% include entry-card.html post=post %}{% endfor %}
+  </div>
+  {% else %}
+  <p class="index-empty">Nothing published here yet. The essays on Substack below are the place to start.</p>
+  {% endif %}
+
+  <aside class="elsewhere" aria-labelledby="elsewhereTitle">
+    <h2 class="elsewhere-heading" id="elsewhereTitle">Essays on Substack</h2>
+    <ul class="elsewhere-list">
+      {% for pub in site.substack %}
+      <li><a href="{{ pub.url }}" target="_blank" rel="noopener"><span class="elsewhere-name">{{ pub.name }} <span aria-hidden="true">↗</span></span><span class="elsewhere-blurb">{{ pub.blurb }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </aside>
 </section>
 <script>
-  document.querySelectorAll('.entry-filters button').forEach(function (btn) {
+  document.querySelectorAll('.tabs button').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var f = btn.getAttribute('data-filter');
-      document.querySelectorAll('.entry-filters button').forEach(function (b) { b.classList.toggle('is-active', b === btn); });
-      document.querySelectorAll('.entry-list .entry-card').forEach(function (c) {
-        c.style.display = (f === 'all' || c.getAttribute('data-type') === f) ? '' : 'none';
+      document.querySelectorAll('.tabs button').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      document.querySelectorAll('.rows .row').forEach(function (r) {
+        r.hidden = !(f === 'all' || r.getAttribute('data-type') === f);
       });
     });
   });

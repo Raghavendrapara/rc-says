@@ -3,6 +3,8 @@ permalink: /projects/dots-agent/
 title: "dots-agent: an LLM video pipeline with human approval gates and an adversarial fact-checker"
 description: "A LangGraph pipeline that researches, scripts, fact-checks, voices and renders explainer videos, with two human gates run from Telegram."
 type: project
+order: 1
+stack: "Python, LangGraph, Claude and DeepSeek, Telegram, ElevenLabs, Remotion"
 tags: [python, langgraph, llm, human-in-the-loop, telegram, remotion]
 abstract: >
   I wanted to make short "connecting the dots" explainer videos on economics and world affairs without letting a language

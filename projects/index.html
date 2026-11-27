@@ -1,16 +1,36 @@
 ---
 layout: base
-title: Projects
-description: "Case studies of projects I've built, covering backend, platform and AI engineering: architecture, design decisions and trade-offs."
+title: Case studies
+description: "How I built four systems across backend, platform and AI engineering: the architecture, the decisions behind it, and what is still unfinished."
 ---
-<section class="section writing-page">
-  <div class="container">
-    <span class="section-label">Projects</span>
-    <h1 class="writing-heading">Case studies</h1>
-    <p class="writing-intro">How I built each project: architecture, design decisions and trade-offs, and what's still to do. More writing is on the <a href="{{ '/writing/' | relative_url }}">writing page</a>.</p>
-    {% assign projects = site.posts | where: "type", "project" %}
-    <div class="entry-list">
-      {% for post in projects %}{% include entry-card.html post=post %}{% endfor %}
-    </div>
+{%- assign projects = site.posts | where: "type", "project" | sort: "order" -%}
+<section class="index">
+  <header class="index-head">
+    <h1 class="index-title">Case studies</h1>
+    <p class="index-intro">How I built {{ projects.size }} systems across backend, platform and AI engineering: the architecture, the decisions behind it, and what is still unfinished. Each one says plainly where the code stops.</p>
+  </header>
+
+  <div class="cases">
+    {% for post in projects %}
+    {%- assign tparts = post.title | split: ': ' -%}
+    {%- assign name = tparts[0] -%}
+    {%- assign sub = post.title | remove_first: name | remove_first: ': ' -%}
+    {%- assign sub_rest = sub | slice: 1, 400 -%}
+    {%- assign sub = sub | slice: 0 | upcase | append: sub_rest -%}
+    {%- assign dparts = post.content | split: '<div class="diagram">' -%}
+    <a class="case" href="{{ post.url | relative_url }}">
+      {% if dparts.size > 1 %}
+      {%- assign svg = dparts[1] | split: '</svg>' | first | append: '</svg>' -%}
+      <span class="case-figure" aria-hidden="true">{{ svg }}</span>
+      {% endif %}
+      <span class="case-text">
+        <span class="case-name">{{ name }}</span>
+        {% if sub != '' %}<span class="case-sub">{{ sub }}</span>{% endif %}
+        <span class="case-desc">{{ post.description }}</span>
+        {% if post.stack %}<span class="case-stack">{{ post.stack }}</span>{% endif %}
+        <span class="case-cta">Read the case study</span>
+      </span>
+    </a>
+    {% endfor %}
   </div>
 </section>
